@@ -39,7 +39,6 @@ export default function Page() {
       <SocialProof {...socialProofHome} />
       <Features {...featuresHome} />
       <Content {...contentHomeOne} />
-      <Content {...contentHomeTwo} />
       <Steps {...stepsHome} />
       <Testimonials {...testimonialsHome} />
       <FAQs2 {...faqs2Home} />

@@ -20,6 +20,7 @@ const Steps = ({
         isImageDisplayed ? 'md:flex-row' : ''
       }`}
     >
+      {/* Steps and Content */}
       <div
         className={`md:py-4 ${
           isImageDisplayed ? 'md:pr-16 md:rtl:pr-0 md:rtl:pl-16 md:basis-1/2' : 'max-w-4xl mx-auto md:self-center'
@@ -35,21 +36,26 @@ const Steps = ({
         )}
         <Timeline items={items} defaultIcon={IconCheck} iconClass="text-primary border-primary-900" />
       </div>
-      {isImageDisplayed && (
-        <div className="relative md:basis-1/2">
-          {image && (
-            <Image
-              src={image.src}
-              width={400}
-              height={768}
-              alt={image.alt}
-              placeholder="blur"
-              className="inset-0 object-cover object-top w-full rounded-md shadow-lg md:absolute md:h-full bg-gray-400 dark:bg-slate-700"
-              quality={50}
-            />
-          )}
-        </div>
-      )}
+
+{/* Image */}
+{isImageDisplayed && (
+  <div className="relative flex items-center justify-center md:basis-1/2">
+    {image && (
+      <Image
+        src={image.src}
+        alt={image.alt}
+        layout="responsive" // Ensures the image scales proportionally
+        width={1200} // Replace this with the actual width of your image
+        height={800}  // Replace this with the actual height of your image
+        objectFit="contain" // Ensures the entire image is shown within the container
+        placeholder="blur"
+        className="rounded-md shadow-lg"
+        quality={100}
+      />
+    )}
+  </div>
+)}
+
     </div>
   </WidgetWrapper>
 );

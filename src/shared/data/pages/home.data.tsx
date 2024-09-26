@@ -1,19 +1,20 @@
 import {
   IconArrowDown,
-  IconArrowsRightLeft,
+  IconPhone,
   IconBrandLinkedin,
-  IconBrandTailwind,
+  IconBrandVsco,
   IconBrandTwitter,
-  IconBulb,
+  IconAirConditioning,
   IconCheck,
   IconClock,
-  IconComponents,
+  IconCarTurbine,
   IconDownload,
-  IconListCheck,
+  IconEngine,
   IconMail,
   IconMapPin,
   IconPhoneCall,
-  IconRocket,
+  IconDropCircle,
+  IconAddressBook,
 } from '@tabler/icons-react';
 import {
   CallToActionProps,
@@ -29,13 +30,14 @@ import {
   TestimonialsProps,
 } from '../../types';
 import heroImg from '~/assets/images/hossam-maintenance-hero.webp';
-import nextJsLogo from '~/assets/images/nextjs-logo.png';
-import reactLogo from '~/assets/images/react-logo.png';
-import tailwindCssLogo from '~/assets/images/tailwind-css-logo.png';
-import typescriptLogo from '~/assets/images/typescript-logo.png';
-import cameraFrontImg from '~/assets/images/camera-front.jpg';
+import hondalogo from '~/assets/images/hondalogo.webp';
+import oemparts from '~/assets/images/honda-genuine.webp';
+import AutoHonda from '~/assets/images/Auto Honda Body & Parts.png';
+import bosch from '~/assets/images/Bosch-Logo.png';
 import cameraBackImg from '~/assets/images/camera-back.jpg';
-import gasImg from '~/assets/images/gas.jpg';
+import MaintenanceProcess from '~/assets/images/Maintenance Process.webp';
+import HossamCenterBuilding from '~/assets/images/Hossam Center Building.webp';
+
 
 // Hero data on Home page *******************
 export const heroHome: HeroProps = {
@@ -59,18 +61,17 @@ export const heroHome: HeroProps = {
   callToAction: {
     text: 'Book a Service',
     href: '/contact',
-    icon: IconDownload,
+    icon: IconAddressBook,
     targetBlank: false,
   },
   callToAction2: {
     text: 'Learn more',
     href: '/about',
   },
-  image: {
-    src: heroImg, // Replace with the actual image for Hossam Maintenance Center
-    alt: 'Hossam Maintenance Center',
-  },
+  videoSrc: '/videos/video hero cover.mp4',
+  // The path to the video fil
 };
+
 
 
 // SocialProof data on Home page *******************
@@ -79,29 +80,29 @@ export const socialProofHome: SocialProofProps = {
   hasBackground: false,
   images: [
     {
-      link: 'https://nextjs.org/',
-      src: nextJsLogo,
-      alt: 'NextJs Logo',
+      link: 'https://www.honda.com/',
+      src: hondalogo,
+      alt: 'Honda Logo',
     },
     {
-      link: 'https://react.dev/',
-      src: reactLogo,
-      alt: 'React Logo',
+      link: 'https://oempartsonline.com/',
+      src: oemparts,
+      alt: 'oem parts Logo',
     },
     {
-      link: 'https://tailwindcss.com/',
-      src: tailwindCssLogo,
-      alt: 'Tailwind CSS Logo',
+      link: 'https://auto-honda-body-parts.odoo.com/',
+      src: AutoHonda,
+      alt: 'auto honda body & parts Logo',
     },
     {
-      link: 'https://www.typescriptlang.org/',
-      src: typescriptLogo,
-      alt: 'Typescript Logo',
+      link: 'https://www.bosch.com/',
+      src: bosch,
+      alt: 'bosch Logo',
     },
   ],
 };
 
-// Features data on Home page *******************
+// Features data for Hossam Center *******************
 export const featuresHome: FeaturesProps = {
   id: 'features-on-home',
   hasBackground: false,
@@ -109,145 +110,121 @@ export const featuresHome: FeaturesProps = {
   header: {
     title: (
       <>
-        What you get with <span className="whitespace-nowrap">TailNext</span>
+        What Hossam Center Offers for Your Honda
       </>
     ),
     subtitle:
-      "Elevating Your Digital Presence: Discover the Synergies Unleashed in Our Platform's Core Strengths, from Seamless Integration to Open Collaboration.",
-    tagline: 'Features',
+      "Providing top-tier Honda maintenance and original spare parts for over 30 years. Our commitment to quality and excellence ensures your car runs smoothly for years to come.",
+    tagline: 'Our Services',
   },
   items: [
     {
-      title: 'Next.Js + Tailwind CSS Integration',
+      title: 'Comprehensive Vehicle Inspection',
       description:
-        'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-      icon: IconBrandTailwind,
+        'Our experts thoroughly inspect every Honda vehicle to ensure it’s running optimally and safely, addressing any issues before they become major problems.',
+      icon: IconCheck, // Update with an appropriate icon
       callToAction: {
-        text: 'Discover now',
-        href: '/',
+        text: 'Learn more',
+        href: '/services#inspection',
       },
     },
     {
-      title: 'Ready-to-use Components',
+      title: 'Oil and Filter Change',
       description:
-        'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-      icon: IconComponents,
+        'Routine maintenance services like oil and filter changes are vital to keeping your engine in perfect condition and extending its lifespan.',
+      icon: IconDropCircle, // Update with an appropriate icon
       callToAction: {
         text: 'Discover now',
-        href: '/',
+        href: '/services#oil-change',
       },
     },
     {
-      title: 'Best Practices',
+      title: 'Engine Maintenance',
       description:
-        'By prioritizing maintainability and scalability through coding standards and design principles, your website stays robust and efficient.',
-      icon: IconListCheck,
+        'Our skilled technicians are equipped to handle engine maintenance, ensuring your Honda runs smoothly and efficiently.',
+      icon: IconEngine, // Update with an appropriate icon
       callToAction: {
-        text: 'Discover now',
-        href: '/',
+        text: 'Learn more',
+        href: '/services#engine-maintenance',
       },
     },
     {
-      title: 'Excellent Page Speed',
+      title: 'Original Spare Parts Installation',
       description:
-        'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-      icon: IconRocket,
+        'We only use authentic Honda spare parts, ensuring the highest quality and longevity for your vehicle’s components.',
+      icon: IconCarTurbine, // Update with an appropriate icon
       callToAction: {
-        text: 'Discover now',
-        href: '/',
+        text: 'Learn more',
+        href: '/services#spare-parts',
       },
     },
     {
-      title: 'Search Engine Optimization (SEO)',
+      title: 'Air Conditioning Services',
       description:
-        "Boost online visibility with our SEO-friendly website. Effective strategies and practices enhance your website's search engine ranking, making it easier for users to find your content.",
-      icon: IconArrowsRightLeft,
+        'Stay cool in the summer with our specialized air conditioning services that ensure your Honda’s AC system runs smoothly.',
+      icon: IconAirConditioning, // Update with an appropriate icon
       callToAction: {
-        text: 'Discover now',
-        href: '/',
+        text: 'Learn more',
+        href: '/services#air-conditioning',
       },
     },
     {
-      title: 'Open to new ideas and contributions',
+      title: 'Brake System Inspection',
       description:
-        'We welcome new ideas and contributions to our platform. Whether you have feature suggestions, want to contribute code, or share insights, our platform is open for collaboration.',
-      icon: IconBulb,
+        'We offer detailed brake inspections to ensure your safety on the road, replacing any worn components with original Honda parts.',
+      icon: IconBrandVsco, // Update with an appropriate icon
       callToAction: {
-        text: 'Discover now',
-        href: '/',
+        text: 'Learn more',
+        href: '/services#brakes',
       },
     },
   ],
 };
 
+
 // Content data on Home page *******************
 export const contentHomeOne: ContentProps = {
-  id: 'contentOne-on-home-one',
+  id: 'contact-section-one',
   hasBackground: true,
   header: {
-    title: 'Aliquip definiebas ad est',
-    subtitle: 'Quando cetero his ne, eum admodum sapientem ut',
-    tagline: 'Content',
+    title: 'Get in Touch with Hossam Center',
+    subtitle: 'We are here to assist you with all your Honda maintenance needs.',
+    tagline: 'Contact Us',
   },
   content:
-    'Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates.',
+    'Whether you need to schedule an appointment, inquire about our services, or need help with your Honda, feel free to reach out. Our team is always ready to provide professional assistance.',
   items: [
     {
-      title: 'Per ei quaeque sensibus',
-      description:
-        'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
+      title: 'Our Address',
+      description: ['Hossam Center for Maintenance', '-Amman, Jordan'],
+      icon: IconMapPin,
     },
     {
-      title: 'Cu imperdiet posidonium sed',
-      description:
-        'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
+      title: 'Phone Numbers',
+      description: ['+962 123 4567  ', ' +962 987 6543'],
+      icon: IconPhone,
     },
     {
-      title: 'Nulla omittam sadipscing mel ne',
-      description:
-        'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
+      title: 'Business Hours',
+      description: ['Sunday - Thursday: 9 AM - 6 PM', 'Friday: Closed'],
+      icon: IconClock,
     },
   ],
   image: {
-    src: cameraFrontImg,
-    alt: 'Colorful Image',
+    src: HossamCenterBuilding , // Provide the correct image path
+    alt: 'Hossam Center Building',
   },
-  isReversed: false,
-  isAfterContent: false,
 };
 
 // Content data on Home page *******************
 export const contentHomeTwo: ContentProps = {
-  id: 'contentOne-on-home-two',
-  hasBackground: true,
-  content:
-    'Per odio fabellas consulatu cu. Utroque detracto mel ea, quo te latine theophrastus. Ea his tale nib dissentias, mei exerci tamquam euripidis cu.',
-  items: [
-    {
-      title: 'Per ei quaeque sensibus',
-    },
-    {
-      title: 'Cu imperdiet posidonium sed',
-    },
-    {
-      title: 'Nulla omittam sadipscing mel ne',
-    },
-    {
-      title: 'Per ei quaeque sensibus',
-    },
-    {
-      title: 'Cu imperdiet posidonium sed',
-    },
-    {
-      title: 'Nulla omittam sadipscing mel ne',
-    },
-  ],
-  image: {
-    src: cameraBackImg,
-    alt: 'Colorful Image',
+  id: 'contact-section-two',
+  hasBackground: false,
+  header: {
+    title: 'Contact Hossam Center',
+    subtitle: 'We are available to answer any inquiries.',
+    tagline: 'Reach Us Anytime',
   },
-  isReversed: true,
-  isAfterContent: true,
 };
 
 // Steps data on Home page *******************
@@ -257,36 +234,39 @@ export const stepsHome: StepsProps = {
   isReversed: false,
   isImageDisplayed: true,
   image: {
-    src: gasImg,
-    alt: 'Steps image',
+    src: MaintenanceProcess, // Replace with your actual image path
+    alt: 'Maintenance Process',
   },
   header: {
-    title: 'Sed ac magna sit amet risus tristique interdum.',
+    title: 'Step-by-Step Guide to Quality Car Maintenance',
   },
   items: [
     {
-      title: 'Step 1',
+      title: 'Step 1: Comprehensive Inspection',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula. Fusce sit amet dui tellus.',
+        'We begin every service with a thorough inspection of your Honda vehicle, identifying any areas that need immediate attention.',
+      icon: IconArrowDown, // You can replace with any fitting icon for your branding.
+    },
+    {
+      title: 'Step 2: Engine and Mechanical Work',
+      description:
+        'Our experts provide in-depth engine diagnostics and repairs to ensure optimal performance and fuel efficiency.',
       icon: IconArrowDown,
     },
     {
-      title: 'Step 2',
+      title: 'Step 3: Oil Change and Brake Check',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.',
+        'We use only high-quality oil and perform a brake check to ensure safety and long-term reliability.',
       icon: IconArrowDown,
     },
     {
-      title: 'Step 3',
+      title: 'Step 4: Ready for the Road',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.',
-      icon: IconArrowDown,
-    },
-    {
-      title: 'Ready!',
+        'Once we’ve completed all necessary maintenance, we ensure that your vehicle is fully ready to hit the road.',
     },
   ],
 };
+
 
 // Testimonials data on Home page *******************
 export const testimonialsHome: TestimonialsProps = {

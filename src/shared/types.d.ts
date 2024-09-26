@@ -241,6 +241,7 @@ type HeroProps = {
   callToAction?: CallToActionType;
   callToAction2?: CallToActionType;
   image?: Image;
+  videoSrc?: string;
 };
 
 type FAQsProps = Widget & {
@@ -284,6 +285,7 @@ type ContentProps = Widget & {
   image?: Image;
   isReversed?: boolean;
   isAfterContent?: boolean;
+  
 };
 
 type StepsProps = Widget & {
