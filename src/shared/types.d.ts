@@ -2,6 +2,18 @@ import { StaticImageData } from 'next/image';
 import { ReactElement } from 'react';
 import type { TablerIcon } from "@tabler/icons-react"
 
+
+
+// types/blog.ts
+export interface BlogPost {
+  id: number;
+  title: string;
+  content: string;
+  slug: string;
+  published_at: string;
+}
+
+
 type Widget = {
   id?: string;
   /** Does it have a background? */
