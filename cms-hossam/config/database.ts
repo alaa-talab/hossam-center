@@ -1,5 +1,7 @@
 import path from 'path';
 
+type ClientType = 'mysql' | 'postgres' | 'sqlite';
+
 interface Env {
   (variable: string, defaultValue?: string): string;
   int(variable: string, defaultValue?: number): number;
@@ -7,7 +9,7 @@ interface Env {
 }
 
 export default ({ env }: { env: Env }) => {
-  const client = env('DATABASE_CLIENT', 'sqlite');
+  const client = env('DATABASE_CLIENT', 'sqlite') as ClientType; // Explicitly type the client
 
   const connections = {
     mysql: {
@@ -59,7 +61,7 @@ export default ({ env }: { env: Env }) => {
   return {
     connection: {
       client,
-      ...connections[client],
+      ...connections[client], // Now 'client' has a specific type
       acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
     },
   };
