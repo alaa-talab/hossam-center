@@ -5,7 +5,7 @@ import type { TablerIcon } from "@tabler/icons-react"
 
 
 // types/blog.ts
-export interface BlogPost {
+type  BlogPost = {
   id: number;
   title: string;
   content: string;

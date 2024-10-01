@@ -1,16 +1,14 @@
 import type { Metadata } from 'next';
-
 import Image from 'next/image';
 import Link from 'next/link';
-
 import { findLatestPosts } from '~/utils/posts';
 
 export const metadata: Metadata = {
   title: 'Blog',
 };
 
-export default async function Home({}) {
-  const posts = await findLatestPosts();
+export default async function BlogPage() {
+  const posts = await findLatestPosts(); // Fetch latest posts from Strapi
   return (
     <section className="mx-auto max-w-3xl px-6 py-12 sm:px-6 sm:py-16 lg:py-20">
       <header>
@@ -18,11 +16,11 @@ export default async function Home({}) {
           Blog
         </h1>
       </header>
-      <div className="grid grid-cols-1 gap-6  p-4 md:p-0 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 p-4 md:p-0 lg:grid-cols-2">
         {posts.map(({ slug, title, image }: { slug: string, title: string, image: string }) => (
           <div key={slug} className="flex flex-col overflow-hidden rounded-xl border border-gray-200 shadow-lg">
-            <Link href={`/${slug}`}>
-              <Image width={650} height={340} alt={title} src={`${image}`} />
+            <Link href={`/blog/${slug}`}>
+              <Image width={650} height={340} alt={title} src={image || '/default-image.jpg'} />
               <h2 className="p-4 font-bold">{title}</h2>
             </Link>
           </div>

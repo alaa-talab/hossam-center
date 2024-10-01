@@ -1,68 +1,50 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import { join } from 'path';
+import axios from 'axios';
 
-const BLOG_DIR = join(process.cwd(), 'src/content/blog');
+const API_URL = 'http://localhost:1337/api/articles';
 
-const load = () => {
-  const files = fs.readdirSync(BLOG_DIR);
-
-  const posts = Promise.all(
-    files
-      .filter((filename) => filename.endsWith('.md'))
-      .map(async (filename) => {
-        const slug = filename.replace('.md', '');
-        return await findPostBySlug(slug);
-      }),
-  );
-
-  return posts;
-};
-
-let _posts;
-
-/** */
+/** Fetch all articles from Strapi */
 export const fetchPosts = async () => {
-  _posts = _posts || load();
-
-  return await _posts;
+  try {
+    const response = await axios.get(API_URL);
+    const posts = response.data.data; // Access the 'data' array from the response
+    return posts.map(post => ({
+      id: post.id,
+      slug: post.slug,          // Ensure this matches the slug in Strapi
+      title: post.title,        // Ensure all fields match Strapi
+      content: post.description, // Use 'description' if no 'content' field exists
+      publishDate: post.publishedAt, // Directly access 'publishedAt'
+    }));
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    return [];
+  }
 };
 
-/** */
+
+/** Find the latest articles */
 export const findLatestPosts = async ({ count } = {}) => {
   const _count = count || 4;
   const posts = await fetchPosts();
-
-  return posts ? posts.slice(_count * -1) : [];
+  return posts ? posts.slice(-_count) : [];
 };
 
-/** */
+/** Find an article by slug */
 export const findPostBySlug = async (slug) => {
-  if (!slug) return null;
-
   try {
-    const readFile = fs.readFileSync(join(BLOG_DIR, `${slug}.md`), 'utf-8');
-    const { data: frontmatter, content } = matter(readFile);
+    const response = await axios.get(`${API_URL}?filters[slug][$eq]=${slug}`);
+    const post = response.data.data[0];
+    if (!post) return null;
+    
     return {
-      slug,
-      ...frontmatter,
-      content,
+      id: post.id,
+      slug: post.attributes.slug,
+      title: post.attributes.title,
+      content: post.attributes.content,
+      image: post.attributes.image?.url || '',
+      publishDate: post.attributes.published_at,
     };
-  } catch (e) {}
-
-  return null;
-};
-
-/** */
-export const findPostsByIds = async (ids) => {
-  if (!Array.isArray(ids)) return [];
-
-  const posts = await fetchPosts();
-
-  return ids.reduce(function (r, id) {
-    posts.some(function (post) {
-      return id === post.id && r.push(post);
-    });
-    return r;
-  }, []);
+  } catch (error) {
+    console.error('Error fetching post by slug:', error);
+    return null;
+  }
 };
