@@ -13,7 +13,11 @@
     "noEmitOnError": true,
     "noImplicitThis": true,
     "outDir": "dist",
-    "rootDir": "."
+    "rootDir": ".",
+    "baseUrl": "./",
+    "paths": {
+      "@strapi/strapi/admin": ["./types/strapi-admin.d.ts"]
+    }
   },
   "include": [
     // Include root files
@@ -23,7 +27,9 @@
     // Include all js files
     "./**/*.js",
     // Force the JSON files in the src folder to be included
-    "src/**/*.json"
+    "src/**/*.json",
+    "src",
+    "types"
   ],
 
   "exclude": [
