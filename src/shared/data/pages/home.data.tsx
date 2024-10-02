@@ -4,16 +4,16 @@ import {
   IconBrandLinkedin,
   IconBrandVsco,
   IconBrandTwitter,
-  IconAirConditioning,
-  IconCheck,
+  IconRotate2,
+  IconDeviceDesktopAnalytics,
   IconClock,
   IconCarTurbine,
   IconDownload,
-  IconEngine,
+  IconCarGarage,
   IconMail,
   IconMapPin,
   IconPhoneCall,
-  IconDropCircle,
+  IconCarCrash,
   IconAddressBook,
 } from '@tabler/icons-react';
 import {
@@ -119,65 +119,57 @@ export const featuresHome: FeaturesProps = {
   },
   items: [
     {
-      title: 'Comprehensive Vehicle Inspection',
+      title: 'Maintenance',
       description:
-        'Our experts thoroughly inspect every Honda vehicle to ensure it’s running optimally and safely, addressing any issues before they become major problems.',
-      icon: IconCheck, // Update with an appropriate icon
-      callToAction: {
-        text: 'Learn more',
-        href: '/services#inspection',
-      },
-    },
-    {
-      title: 'Oil and Filter Change',
-      description:
-        'Routine maintenance services like oil and filter changes are vital to keeping your engine in perfect condition and extending its lifespan.',
-      icon: IconDropCircle, // Update with an appropriate icon
-      callToAction: {
-        text: 'Discover now',
-        href: '/services#oil-change',
-      },
-    },
-    {
-      title: 'Engine Maintenance',
-      description:
-        'Our skilled technicians are equipped to handle engine maintenance, ensuring your Honda runs smoothly and efficiently.',
-      icon: IconEngine, // Update with an appropriate icon
+        'Our skilled technicians are fully equipped to provide comprehensive maintenance services, ensuring your vehicle operates at peak performance, delivering reliability, safety, and efficiency in every drive.',
+      icon: IconCarGarage
+      , // Update with an appropriate icon
       callToAction: {
         text: 'Learn more',
         href: '/services#engine-maintenance',
       },
     },
     {
-      title: 'Original Spare Parts Installation',
+      title: 'Spare Parts',
       description:
-        'We only use authentic Honda spare parts, ensuring the highest quality and longevity for your vehicle’s components.',
+        'Get high-quality spare parts for your Honda, ensuring optimal performance and safety.',
       icon: IconCarTurbine, // Update with an appropriate icon
+      callToAction: {
+        text: 'Learn more',
+        href: '/services#inspection',
+      },
+    },
+    {
+      title: 'Radar Calibration',
+      description:
+        'Ensure your vehicles safety systems function accurately with precise radar calibration by our expert technicians.',
+      icon: IconCarCrash, // Update with an appropriate icon
+      callToAction: {
+        text: 'Discover now',
+        href: '/services#oil-change',
+      },
+    },
+    {
+      title: 'Car Computer Diagnostic',
+      description:
+        'Our advanced car computer diagnostic tools ensure accurate assessments to maintain your vehicle’s performance.',
+      icon: IconDeviceDesktopAnalytics, // Update with an appropriate icon
       callToAction: {
         text: 'Learn more',
         href: '/services#spare-parts',
       },
     },
     {
-      title: 'Air Conditioning Services',
+      title: 'Computer Software Update',
       description:
-        'Stay cool in the summer with our specialized air conditioning services that ensure your Honda’s AC system runs smoothly.',
-      icon: IconAirConditioning, // Update with an appropriate icon
+        'Keep your vehicles systems up-to-date with our computer software updates, ensuring optimal performance.',
+      icon: IconRotate2, // Update with an appropriate icon
       callToAction: {
         text: 'Learn more',
         href: '/services#air-conditioning',
       },
     },
-    {
-      title: 'Brake System Inspection',
-      description:
-        'We offer detailed brake inspections to ensure your safety on the road, replacing any worn components with original Honda parts.',
-      icon: IconBrandVsco, // Update with an appropriate icon
-      callToAction: {
-        text: 'Learn more',
-        href: '/services#brakes',
-      },
-    },
+  
   ],
 };
 

@@ -3,10 +3,11 @@ import Headline from '../common/Headline';
 import { ContactProps } from '~/shared/types';
 import WidgetWrapper from '../common/WidgetWrapper';
 
-const Contact = ({ header, content, items, image, id, hasBackground = false }: ContactProps) => (
+const Contact = ({ header, content, items, image, id, hasBackground = false, form }: ContactProps) => (
   <WidgetWrapper id={id ? id : ''} hasBackground={hasBackground} containerClass="max-w-6xl">
     {header && <Headline header={header} titleClass="text-3xl sm:text-5xl" />}
     <div className="grid md:grid-cols-2 gap-10 items-stretch justify-center">
+      
       {/* Contact Information */}
       <div className="pr-6">
         {content && <p className="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400">{content}</p>}
@@ -14,22 +15,19 @@ const Contact = ({ header, content, items, image, id, hasBackground = false }: C
           {items &&
             items.map(({ title, description, icon: Icon }, index) => (
               <li key={`item-contact-${index}`} className="flex">
-                <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                <div className="flex h-10 w-10 items-center justify-center rounded bg-black text-gray-50">
                   {Icon && <Icon className="h-6 w-6" />}
                 </div>
                 <div className="ml-4 rtl:ml-0 rtl:mr-4 mb-4">
                   <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">{title}</h3>
-                  {/* Ensure phone numbers are in two lines */}
-                  {typeof description === 'string' ? (
-                    <p key={`text-description-${index}`} className="text-gray-600 dark:text-slate-400">
-                      {description}
-                    </p>
-                  ) : (
-                    description && description.map((descLine, lineIndex) => (
+                  {Array.isArray(description) ? (
+                    description.map((descLine, lineIndex) => (
                       <p key={`text-description-${lineIndex}`} className="text-gray-600 dark:text-slate-400">
                         {descLine}
                       </p>
                     ))
+                  ) : (
+                    <p className="text-gray-600 dark:text-slate-400">{description}</p>
                   )}
                 </div>
               </li>
@@ -37,18 +35,47 @@ const Contact = ({ header, content, items, image, id, hasBackground = false }: C
         </ul>
       </div>
 
-      {/* Image on the Right */}
+      {/* Image */}
       {image && (
         <div className="flex justify-center items-center">
           <Image
             src={image.src}
             alt={image.alt}
-            width={500} // Adjust the width according to your layout
-            height={500} // Adjust the height accordingly
+            width={500}
+            height={500}
             className="rounded-lg shadow-lg"
             placeholder="blur"
             objectFit="cover"
           />
+        </div>
+      )}
+
+      {/* Form Section */}
+      {form && (
+        <div className="mt-8 md:col-span-2">
+          <h3 className="text-2xl font-bold mb-4">{form.title}</h3>
+          <form className="grid gap-6">
+            {form.inputs.map((input, index) => (
+              <div key={index} className="flex flex-col">
+                <label className="mb-2 font-semibold text-gray-800 dark:text-white">{input.label}</label>
+                {input.type === 'textarea' ? (
+                  <textarea
+                    className="p-3 border border-gray-300 rounded-md dark:bg-slate-800 dark:border-slate-600"
+                    placeholder={input.placeholder}
+                  />
+                ) : (
+                  <input
+                    type={input.type}
+                    className="p-3 border border-gray-300 rounded-md dark:bg-slate-800 dark:border-slate-600"
+                    placeholder={input.placeholder}
+                  />
+                )}
+              </div>
+            ))}
+            <button type={form.btn.type} className="btn btn-primary mt-4">
+              {form.btn.title}
+            </button>
+          </form>
         </div>
       )}
     </div>

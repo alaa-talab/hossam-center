@@ -2,8 +2,10 @@ import { fetchPosts, findPostBySlug } from '~/utils/posts'; // Ensure imports ar
 import { notFound } from 'next/navigation'; // Import notFound
 
 export async function generateStaticParams() {
-  const posts = await fetchPosts(); // Fetch posts from Strapi
-  return posts.map(post => ({ slug: post.slug })); // Generate paths based on slugs
+  const posts = await fetchPosts(); // Fetch all posts from Strapi
+  return posts.map((post) => ({
+    slug: post.slug, // Ensure the slug is correctly passed
+  }));
 }
 
 export async function generateMetadata({ params }) {

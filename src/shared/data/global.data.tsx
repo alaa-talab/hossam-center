@@ -183,21 +183,18 @@ export const footerData: FooterProps = {
     { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
     { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
     { label: 'RSS', icon: IconRss, href: '#' },
-    { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/onwidget/tailnext' },
+    { label: 'Github', icon: IconBrandGithub, href: 'https://dfeelings.com/' },
   ],
   footNote: (
-    <div className="mr-4 rtl:mr-0 rtl:ml-4 text-sm">
-      <span className="float-left rtl:float-right mr-1.5 rtl:mr-0 rtl:ml-1.5 h-5 w-5 rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
-      <span>
-        Made by{' '}
-        <a
-          className="font-semibold text-slate-900 dark:text-gray-200 hover:text-blue-600 hover:underline dark:hover:text-blue-600"
-          href="https://onwidget.com/"
-        >
-          {' '}
-          onWidget
-        </a>{' '}
-        · All rights reserved.
+    <div className="mr-4 rtl:mr-0 rtl:ml-4 text-sm flex items-center">
+      {/* Use the logo */}
+      <img
+        src="https://dfeelings.com/wp-content/uploads/2024/02/Dfeelings-logo-white.svg"
+        alt="Dfeelings Logo"
+        className="mr-2 rtl:ml-2 h-6" // Adjust the size of the logo as needed
+      />
+      <span className="text-gray-600 dark:text-gray-400">
+        All rights reserved to Hossam Center 2024
       </span>
     </div>
   ),
@@ -241,18 +238,15 @@ export const footerData2: FooterProps = {
     { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/onwidget/tailnext' },
   ],
   footNote: (
-    <div className="mr-4 rtl:mr-0 rtl:ml-4 text-sm">
-      <span className="float-left rtl:float-right mr-1.5 rtl:mr-0 rtl:ml-1.5 h-5 w-5 rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
-      <span>
-        Made by{' '}
-        <a
-          className="font-semibold text-slate-900 dark:text-gray-200 hover:text-blue-600 hover:underline dark:hover:text-blue-600"
-          href="https://onwidget.com/"
-        >
-          {' '}
-          onWidget
-        </a>{' '}
-        · All rights reserved.
+    <div className="mr-4 rtl:mr-0 rtl:ml-4 text-sm flex items-center">
+      {/* Use the logo */}
+      <img
+        src="https://dfeelings.com/wp-content/uploads/2024/02/Dfeelings-logo-white.svg"
+        alt="Dfeelings Logo"
+        className="mr-2 rtl:ml-2 h-6" // Adjust the size of the logo as needed
+      />
+      <span className="text-gray-600 dark:text-gray-400">
+        All rights reserved to Hossam Center 2024
       </span>
     </div>
   ),

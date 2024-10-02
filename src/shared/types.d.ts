@@ -34,8 +34,10 @@ type Header = {
   title?: string | ReactElement;
   subtitle?: string | ReactElement;
   tagline?: string;
-  position?: 'center' | 'right' | 'left';
+  position?: 'left' | 'center' | 'right'; // Only these values are allowed
 };
+
+
 
 type HeadlineProps = {
   header: Header;
@@ -271,12 +273,34 @@ type CollapseProps = {
   iconDown?: ReactElement;
 };
 
+
+
+// Define button type for the form
+type FormButtonProps = {
+  label: string;  // Add the label for the button
+  type: 'submit' | 'button';
+};
+
+// Define form type for CallToActionProps
+type FormProps = {
+  inputs: Array<{
+    label: string;
+    type: string;
+    placeholder: string;
+  }>;
+  btnf: FormButtonProps; // Use the custom button type
+};
+
+// Define CallToActionProps
 type CallToActionProps = Widget & {
   title: string;
   subtitle: string;
   callToAction?: CallToActionType;
   items?: Array<Item>;
+  form?: FormProps;  // Added form property
 };
+
+
 
 type FeaturesProps = Widget & {
   header?: Header;

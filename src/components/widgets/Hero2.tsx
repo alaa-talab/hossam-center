@@ -4,47 +4,68 @@ import CTA from '../common/CTA';
 
 const Hero2 = ({ title, subtitle, tagline, callToAction, callToAction2, image }: HeroProps) => {
   return (
-    <section className="mt-[-72px] bg-primary-50 dark:bg-slate-800" id="heroTwo">
-      <div className="mx-auto max-w-7xl px-4 pt-[72px] sm:px-6 md:flex md:h-screen 2xl:h-auto">
-        <div className="block py-12 text-center md:flex md:py-12 md:text-left lg:py-16">
-          <div className="mx-auto flex max-w-5xl basis-[56%] items-center">
-            <div className="max-w-3xl pb-12 pr-0 md:py-0 md:pr-8 md:pb-0 lg:pr-16">
-              {tagline && (
-                <p className="text-base font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-200">
-                  {tagline}
-                </p>
-              )}
-              {title && (
-                <h1 className="leading-tighter font-heading mb-4 px-4 text-5xl font-bold tracking-tighter md:px-0 md:text-[3.48rem]">
-                  {title}
-                </h1>
-              )}
-              <div className="mx-auto max-w-3xl">
-                {subtitle && <p className="mb-8 text-xl font-normal text-gray-600 dark:text-slate-400">{subtitle}</p>}
-                <div className="flex max-w-none flex-col flex-nowrap justify-center gap-4 sm:flex-row md:m-0 md:justify-start">
-                  {callToAction && <CTA callToAction={callToAction} linkClass="btn btn-primary" />}
-                  {callToAction2 && <CTA callToAction={callToAction2} linkClass="btn" />}
-                </div>
-              </div>
-            </div>
+    <section
+      id="heroTwo"
+      className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-red-500 to-gray-900 text-white"
+    >
+      {/* Background Image */}
+      {image && (
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <Image
+            className="object-cover w-full h-full opacity-60"
+            src={image.src}
+            alt={image.alt}
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60 z-1"></div>
+        </div>
+      )}
+
+      {/* Content */}
+      <div className="relative z-10 px-6 text-center max-w-7xl mx-auto lg:text-left">
+        <div className="flex flex-col items-center lg:flex-row lg:items-start gap-10">
+          {/* Text Content */}
+          <div className="w-full max-w space-y-6 lg:space-y-8">
+            {tagline && (
+              <p className="text-sm font-bold uppercase tracking-widest text-center text-gray-200">
+                {tagline}
+              </p>
+            )}
+            {title && (
+              <h1 className="text-4xl lg:text-6xl font-extrabold text-center leading-tight tracking-tight">
+                {title}
+              </h1>
+            )}
+            {subtitle && (
+              <p className="text-lg lg:text-2xl font-light text-center text-indigo-100">
+                {subtitle}
+              </p>
+            )}
+            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+          {callToAction && <CTA callToAction={callToAction} linkClass="btn btn-primary" />}
+          {callToAction2 && <CTA callToAction={callToAction2} linkClass="btn" />}
+        </div>
           </div>
-          <div className="block flex-1 items-center md:flex">
-            <div className="relative m-auto h-full max-w-4xl object-cover">
-              {image && (
+
+          {/* Image Section */}
+          {image && (
+            <div className="relative flex-shrink-0 w-full max-w-xl">
+              <div className="rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  className="mx-auto h-full w-auto rounded-md bg-gray-400 object-cover drop-shadow-2xl dark:bg-slate-700"
+                  className="object-cover"
                   src={image.src}
                   alt={image.alt}
-                  width={540}
-                  height={405}
-                  sizes="(min-width: 1920px) 749px, (min-width: 1540px) 43.89vw, (min-width: 1360px) 542px, (min-width: 780px) calc(39.29vw + 16px), calc(96.52vw - 22px)"
-                  loading="eager"
+                  width={640}
+                  height={480}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   placeholder="blur"
-                  priority
+                  loading="eager"
                 />
-              )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>
