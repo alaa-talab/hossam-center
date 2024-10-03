@@ -40,12 +40,12 @@ const Steps = ({
             subtitleClass={`${isImageDisplayed ? 'text-left rtl:text-right' : 'text-center'} text-lg sm:text-xl text-gray-500`}
           />
         )}
-        <Timeline
-          items={items}
-          defaultIcon={IconCheck}
-          iconClass="text-primary border-primary-900"
-          itemClass="animate-fadeInUp"
-        />
+       <Timeline
+  items={items}
+  defaultIcon={IconCheck}
+  iconClass="text-primary border-primary-900"
+  titleClass="animate-fadeInUp"
+/>
       </div>
 
       {/* Image Section */}
