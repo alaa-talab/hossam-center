@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
-
 import { SITE } from '~/config.js';
-
 import Hero from '~/components/widgets/Hero';
 import SocialProof from '../src/components/widgets/SocialProof';
 import Features from '~/components/widgets/Features';
@@ -13,6 +11,7 @@ import Pricing from '~/components/widgets/Pricing';
 import Team from '~/components/widgets/Team';
 import CallToAction2 from '~/components/widgets/CallToAction2';
 import Contact from '~/components/widgets/Contact';
+import { InfiniteSlider } from '~/components/widgets/InfiniteSlider'; // Import your InfiniteSlider component
 import {
   callToAction2Home,
   contactHome,
@@ -33,19 +32,18 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  
+
   return (
     <>
       <Hero {...heroHome} />
-      <SocialProof {...socialProofHome} />
+      <InfiniteSlider /> {/* Use InfiniteSlider for the scrolling effect */}
       <Features {...featuresHome} />
       <Content {...contentHomeOne} />
       <Steps {...stepsHome} />
       <Testimonials {...testimonialsHome} />
       <FAQs2 {...faqs2Home} />
-      
-      
       <Contact {...contactHome} />
-      
     </>
   );
 }

@@ -2,6 +2,7 @@ import {
   IconBrandFacebook,
   IconBrandGithub,
   IconBrandInstagram,
+  IconBrandTiktok,
   IconBrandTwitter,
   IconChevronDown,
   IconRss,
@@ -13,12 +14,12 @@ import Image from 'next/image';
 export const announcementData: AnnouncementProps = {
   title: 'NEW',
   callToAction: {
-    text: 'This template is made with Next.js 14 using the new App Router »',
-    href: 'https://nextjs.org/blog/next-14',
+    text: 'Discover the services provided by Hossam Center for Honda vehicle maintenance.',
+    href: '/services',
   },
   callToAction2: {
-    text: 'Follow @onWidget on Twitter',
-    href: 'https://twitter.com/intent/user?screen_name=onwidget',
+    text: 'Follow us for updates on social media!',
+    href: 'https://twitter.com/hossamcenter',
   },
 };
 
@@ -41,13 +42,12 @@ export const headerData: HeaderProps = {
       label: 'Contact Us',
       href: '/contact',
     },
-  
   ],
   actions: [
     {
-      text: 'Download',
-      href: 'https://github.com/onwidget/tailnext',
-      targetBlank: true,
+      text: 'Book Appointment',
+      href: '/contact',
+      targetBlank: false,
     },
   ],
   isSticky: true,
@@ -58,7 +58,7 @@ export const headerData: HeaderProps = {
 
 // Footer data
 export const footerData: FooterProps = {
-  title: 'TailNext',
+  title: 'Hossam Center',
   links: [
     {
       label: 'Terms & Conditions',
@@ -75,48 +75,40 @@ export const footerData: FooterProps = {
   ],
   columns: [
     {
-      title: 'Product',
+      title: 'Services',
       links: [
         {
-          label: 'Features',
-          href: '/',
+          label: 'Engine Maintenance',
+          href: '/services#engine-maintenance',
         },
         {
-          label: 'Security',
-          href: '/',
+          label: 'Brake Inspection',
+          href: '/services#brake-inspection',
         },
         {
-          label: 'Team',
-          href: '/',
+          label: 'Oil Change',
+          href: '/services#oil-change',
         },
         {
-          label: 'Enterprise',
-          href: '/',
+          label: 'Original Spare Parts',
+          href: '/services#spare-parts',
         },
         {
-          label: 'Customer stories',
-          href: '/',
-        },
-        {
-          label: 'Pricing',
-          href: '/pricing',
-        },
-        {
-          label: 'Resources',
-          href: '/',
+          label: 'Comprehensive Vehicle Checkup',
+          href: '/services#vehicle-checkup',
         },
       ],
     },
     {
-      title: 'Platform',
+      title: 'Contact',
       links: [
         {
-          label: 'Developer API',
-          href: '/',
+          label: 'Call us: +962 123 4567',
+          href: 'tel:+9621234567',
         },
         {
-          label: 'Partners',
-          href: '/',
+          label: 'Email: info@hossamcenter.com',
+          href: 'mailto:info@hossamcenter.com',
         },
       ],
     },
@@ -124,78 +116,37 @@ export const footerData: FooterProps = {
       title: 'Support',
       links: [
         {
-          label: 'Docs',
-          href: '/',
+          label: 'FAQs',
+          href: '/faqs',
         },
         {
-          label: 'Community Forum',
-          href: '/',
+          label: 'Customer Support',
+          href: '/support',
         },
         {
-          label: 'Professional Services',
-          href: '/',
-        },
-        {
-          label: 'Skills',
-          href: '/',
-        },
-        {
-          label: 'Status',
-          href: '/',
-        },
-      ],
-    },
-    {
-      title: 'Company',
-      links: [
-        {
-          label: 'About',
-          href: '/',
-        },
-        {
-          label: 'Blog',
-          href: '/blog',
-        },
-        {
-          label: 'Careers',
-          href: '/',
-        },
-        {
-          label: 'Press',
-          href: '/',
-        },
-        {
-          label: 'Inclusion',
-          href: '/',
-        },
-        {
-          label: 'Social Impact',
-          href: '/',
-        },
-        {
-          label: 'Shop',
-          href: '/',
+          label: 'Appointment Booking',
+          href: '/contact',
         },
       ],
     },
   ],
   socials: [
-    { label: 'Twitter', icon: IconBrandTwitter, href: '#' },
-    { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
-    { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
-    { label: 'RSS', icon: IconRss, href: '#' },
+    { label: 'Twitter', icon: IconBrandTwitter, href: 'https://twitter.com/hossamcenter' },
+    { label: 'Instagram', icon: IconBrandInstagram, href: 'https://instagram.com/hossamcenter' },
+    { label: 'Facebook', icon: IconBrandFacebook, href: 'https://facebook.com/hossamcenter' },
+    { label: 'RSS', icon: IconRss, href: '/rss' },
     { label: 'Github', icon: IconBrandGithub, href: 'https://dfeelings.com/' },
   ],
   footNote: (
     <div className="mr-4 rtl:mr-0 rtl:ml-4 text-sm flex items-center">
       {/* Use the logo */}
       <Image
-  src="https://dfeelings.com/wp-content/uploads/2024/02/Dfeelings-logo-white.svg"
-  alt="Dfeelings Logo"
-  width={24} // Adjust width as needed
-  height={24} // Adjust height as needed
-  className="mr-2 rtl:ml-2 h-6" // You can still apply CSS classes
-/>
+        src="https://dfeelings.com/wp-content/uploads/2024/02/Dfeelings-logo-white.svg"
+        alt="Dfeelings Logo"
+        width={24} // Adjust width as needed
+        height={24} // Adjust height as needed
+        className="mr-2 rtl:ml-2 h-6" // CSS classes for styling
+      />
       <span className="text-gray-600 dark:text-gray-400">
         All rights reserved to Hossam Center 2024
       </span>
@@ -222,38 +173,50 @@ export const footerData2: FooterProps = {
   columns: [
     {
       title: 'Address',
-      texts: ['51 Phasellus Avenue Maecenas', 'Aliquam, AQ 52098'],
+      texts: ['Hossam Maintenance Center, Amman, Jordan'],
     },
     {
       title: 'Phone',
-      texts: ['Reception: +105 123 4567', 'Office: +107 235 7890'],
+      texts: ['Mobile: +962 123 4567', 'Office: +962 987 6543'],
+     
     },
     {
       title: 'Email',
-      texts: ['Office: info@example.com', 'Site: https://example.com'],
+      texts: ['info@hossamcenter.com'],
+      
     },
+    {
+      logo: {
+        src: '/Website Logo.png',  // Path to your logo image
+        alt: 'Logo Alt Text',
+        width: 300,  // Specify the width
+        height: 300,  // Specify the height
+      },
+    }
   ],
   socials: [
-    { label: 'Twitter', icon: IconBrandTwitter, href: '#' },
-    { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
-    { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
-    { label: 'RSS', icon: IconRss, href: '#' },
-    { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/onwidget/tailnext' },
+    { label: 'Tiktok', icon: IconBrandTiktok, href: 'https://tiktok.com' },
+    { label: 'Instagram', icon: IconBrandInstagram, href: 'https://instagram.com' },
+    { label: 'Facebook', icon: IconBrandFacebook, href: 'https://facebook.com' },
   ],
   footNote: (
     <div className="mr-4 rtl:mr-0 rtl:ml-4 text-sm flex items-center">
-      {/* Use the logo */}
-      <Image
-    src="https://dfeelings.com/wp-content/uploads/2024/02/Dfeelings-logo-white.svg"
-    alt="Dfeelings Logo"
-    width={24} // Adjust width as needed
-    height={24} // Adjust height as needed
-    className="mr-2 rtl:ml-2" // You can still apply CSS classes for additional styling
-  />
-
+      <a href="https://dfeelings.com/" target="_blank" rel="noopener noreferrer">
+        <Image
+          src="https://dfeelings.com/wp-content/uploads/2024/02/Dfeelings-logo-white.svg"
+          alt="Dfeelings Logo"
+          width={75}
+          height={75}
+          className="mr-2 rtl:ml-2"
+        />
+      </a>
       <span className="text-gray-600 dark:text-gray-400">
         All rights reserved to Hossam Center 2024
       </span>
     </div>
   ),
 };
+
+
+  
+

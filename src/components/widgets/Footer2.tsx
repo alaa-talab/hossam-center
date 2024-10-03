@@ -1,4 +1,5 @@
 import { footerData2 } from '~/shared/data/global.data';
+import Image from 'next/image';
 
 const Footer2 = () => {
   const { links, columns, socials, footNote } = footerData2;
@@ -6,7 +7,7 @@ const Footer2 = () => {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6">
       <div className="xs:gap-8 grid grid-cols-4 gap-4 gap-y-8 py-8 md:py-12">
-        {columns.map(({ title, texts }, index) => (
+        {columns.map(({ title, texts, logo }, index) => (
           <div
             key={`item-column-${index}`}
             className="col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-1 xl:col-span-1"
@@ -18,6 +19,18 @@ const Footer2 = () => {
                   {text}
                 </p>
               ))}
+            {/* Check if there is a logo to display */}
+            {logo && (
+              <div className="mt-4">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width || 250}  // You can adjust the default width
+                  height={logo.height || 250} // You can adjust the default height
+                  className="inline-block"
+                />
+              </div>
+            )}
           </div>
         ))}
         <div className="col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-1 xl:col-span-1">

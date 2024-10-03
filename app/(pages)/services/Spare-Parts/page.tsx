@@ -7,39 +7,60 @@ import Stats from '~/components/widgets/Stats';
 import Steps from '~/components/widgets/Steps';
 import { notFound } from 'next/navigation'; // Import notFound
 import {
-  heroCarDiagnostic,
-  statsCarDiagnostic,
-  featuresCarDiagnostic,
-  stepsCarDiagnostic,
-  faqsCarDiagnostic,
-  contactCarDiagnostic,
-} from '~/shared/data/pages/car-computer-diagnostic.data';
+  herospareparts,
+  statsspareparts,
+  featuresspareparts,
+  stepsspareparts,
+  faqsspareparts,
+  contactspareparts,
+} from '~/shared/data/pages/spare parts.data';
 
 export const metadata: Metadata = {
-  title: 'Computer Software Update',
+  title: 'Spare Parts & Services',
 };
 
-const CarDiagnosticPage = () => {
+const SparePartsPage = () => {
   return (
-    <>
-      <Hero2 {...heroCarDiagnostic} />
-      <Stats {...statsCarDiagnostic} />
-      <Steps {...stepsCarDiagnostic} />
-      <FAQs {...faqsCarDiagnostic} />
-      <Contact
-        form={{
-          title: 'Get in touch',
-          description: 'Contact us today for more details.',
-          inputs: [
-            { label: 'Name', type: 'text', placeholder: 'Enter your name' },
-            { label: 'Email', type: 'email', placeholder: 'Enter your email' }
-          ],
-          btn: { title: 'Send Message', type: 'submit' }
-        }}
-        {...contactCarDiagnostic}
-      />
-    </>
-  );
-};
+      <>
+        {/* Hero Section */}
+        <Hero2 {...herospareparts} />
+  
+        {/* Stats Section */}
+        <Stats {...statsspareparts} />
+  
+        {/* Features Section */}
+        <Features {...featuresspareparts} />
+  
+        {/* Steps Section */}
+        <Steps
+          id={stepsspareparts.id}
+          header={{
+            title: 'Our Spare Parts Process',
+            subtitle: 'Step-by-step guide to getting the right spare parts for your vehicle.',
+          }}
+          items={stepsspareparts.items}
+          image={stepsspareparts.image} // Pass the image object here
+        />
+  
+        {/* FAQs Section */}
+        <FAQs {...faqsspareparts} />
+  
+        {/* Contact Section */}
+        <Contact
+          form={{
+            title: 'Get in touch',
+            description: 'Contact us today for more details about our spare parts and services.',
+            inputs: [
+              { label: 'Name', type: 'text', placeholder: 'Enter your name' },
+              { label: 'Email', type: 'email', placeholder: 'Enter your email' },
+              { label: 'Message', type: 'textarea', placeholder: 'Describe your spare parts needs' }
+            ],
+            btn: { title: 'Send Message', type: 'submit' }
+          }}
+          {...contactspareparts}
+        />
+      </>
+    );
+  };
 
-export default CarDiagnosticPage;
+export default SparePartsPage;

@@ -1,4 +1,5 @@
 import { footerData } from '~/shared/data/global.data';
+import Logo from '~/components/atoms/Logo'; // Import your logo component
 
 const Footer = () => {
   const { title, links, columns, socials, footNote } = footerData;
@@ -10,8 +11,9 @@ const Footer = () => {
         <div className="grid grid-cols-12 gap-4 gap-y-8 py-8 sm:gap-8 md:py-12">
           <div className="col-span-12 lg:col-span-4">
             <div className="mb-2">
-              <a className="inline-block text-xl font-bold" href="/">
-                {title}
+              {/* Replace the title with the Logo component */}
+              <a className="inline-block" href="/">
+                <Logo /> {/* Use the Logo component here */}
               </a>
             </div>
             <div className="text-muted text-sm">

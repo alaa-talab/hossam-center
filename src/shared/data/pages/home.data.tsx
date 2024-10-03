@@ -15,6 +15,7 @@ import {
   IconPhoneCall,
   IconCarCrash,
   IconAddressBook,
+  IconCalendar,
 } from '@tabler/icons-react';
 import {
   CallToActionProps,
@@ -267,68 +268,68 @@ export const testimonialsHome: TestimonialsProps = {
   header: {
     title: 'What our customers say about us',
     subtitle:
-      'Etiam sed odio et dolor auctor gravida. Curabitur tincidunt elit non risus pharetra sodales. Etiam sit amet mattis massa.',
+      'Discover how our services have made a difference for our valued clients.',
   },
   testimonials: [
     {
-      name: 'Tayla Kirsten',
-      job: 'Marketing Manager',
-      testimonial: `I'm impressed by the speed and performance of these templates. My website now loads in the blink of an eye, significantly enhancing my visitors' experience. Thanks to TailNext, my online business is thriving.`,
+      name: 'Mohammad Shatarah',
+      job: 'From Google Reviews',
+      testimonial: `Amazing helpul peaople, ask for yazeed, they saved me a ton of money and restored my car`,
       image: {
-        src: 'https://images.unsplash.com/photo-1619734086067-24bf8889ea7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Tayla Kirsten',
+        src: 'https://lh3.googleusercontent.com/a/ACg8ocLUoX8k2HZ8wOF4IOjONv6psceKZFnxM9j-1c_0sPeABNuo5g=w60-h60-p-rp-mo-br100',
+        alt: 'Mohammad Shatarah',
       },
-      href: '/',
+      href: 'https://g.co/kgs/sifbydC',
     },
     {
-      name: 'Silver Jordan',
-      job: 'Senior Marketer',
-      testimonial: `I had never found it so easy to customize a website. TailNext's templates are incredibly flexible, and with Tailwind CSS, I've managed to give my website the look and feel I always wanted. Highly recommended!`,
+      name: 'Mohammad Hasan',
+      job: 'From Google Reviews',
+      testimonial: `Great services from both Husam and Ziad Thank you !`,
       image: {
-        src: 'https://images.unsplash.com/photo-1565049786474-1dea82a8b995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Silver Jordan',
+        src: 'https://lh3.googleusercontent.com/a/ACg8ocJYEFSDB2ZkcNULPNevDkW2J5mGgtTUQqvSNvkCGMF1vsaWvw=w60-h60-p-rp-mo-ba3-br100',
+        alt: 'Mohammad Hasan',
       },
-      href: '/',
+      href: 'https://g.co/kgs/h6QjfFE',
     },
     {
-      name: 'Kelsey Arden',
-      job: 'Co-Founder & CEO',
-      testimonial: `As a beginner in web development, I really needed clear guidance. Tailnext made it possible. I was able to install and customize my website seamlessly, and I'm thrilled with the results!`,
+      name: 'Hazem Hamadneh',
+      job: 'From Google Reviews',
+      testimonial: `Highly experienced and professionally-minded employees.`,
       image: {
-        src: 'https://images.unsplash.com/photo-1659057106920-da022cfbc0cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Kelsey Arden',
+        src: 'https://lh3.googleusercontent.com/a/ACg8ocK2YViqh7PJHn9O7GNCQz7zpRdSemM6wnFB_UbBLmu-wm8rIA=w60-h60-p-rp-mo-ba2-br100',
+        alt: 'Hazem Hamadneh',
       },
-      href: '/',
+      href: 'https://g.co/kgs/LJtx3Ui',
     },
     {
-      name: 'Sarah Johnson',
-      job: 'Business Owner',
-      testimonial: `They've not only saved me a ton of time but have also made my websites look incredibly professional. The level of detail and thought that went into designing these templates is truly impressive.`,
+      name: 'Yazeed Samara',
+      job: 'From Google Reviews',
+      testimonial: `Very good`,
       image: {
-        src: 'https://images.unsplash.com/photo-1572417884940-c24659be6068?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Sarah Johnson',
+        src: 'https://lh3.googleusercontent.com/a/ACg8ocIdbl27sUe6pRGamlSR_c7poFIlD-vMbbimmCYBpoK0Bi0pAw=w60-h60-p-rp-mo-br100',
+        alt: 'Yazeed Samara',
       },
-      href: '/',
+      href: 'https://g.co/kgs/j7uU89H',
     },
     {
-      name: 'Keith Young',
-      job: 'Freelance Developer',
-      testimonial: `The clean code and integration with Next.js make my projects a breeze. Plus, the responsive design ensures that my clients' websites look amazing on any device. These templates have become my secret weapon for success!`,
+      name: 'Waleed Mohammad',
+      job: 'From Google Reviews',
+      testimonial: `Very good place kind people who try to keep your car in good condition`,
       image: {
-        src: 'https://images.unsplash.com/photo-1694287877106-ee22f764aef1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Keith Young',
+        src: 'https://lh3.googleusercontent.com/a-/ALV-UjV-C765z9QwXrhjvzXXmsNbPqXT_I5wd6VUJicVokKKO8ToBYsK=w60-h60-p-rp-mo-ba2-br100',
+        alt: 'Waleed Mohammad',
       },
-      href: '/',
+      href: 'https://g.co/kgs/DUYEbq6',
     },
     {
-      name: 'Lisa Gordon',
-      job: 'Project Manager',
-      testimonial: `Their templates are not only stunning but also user-friendly. The support I received from their community has been exceptional. I'm proud to say that I've built my dream website with TailNext.`,
+      name: 'Saed Aladam',
+      job: 'From Google Reviews',
+      testimonial: `Amazing service`,
       image: {
-        src: 'https://images.unsplash.com/photo-1665984867752-6370ab5ae35e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Lisa Gordon',
+        src: 'https://lh3.googleusercontent.com/a/ACg8ocIrbGjAvkMM_5tXX00VX9zTbbU2OLAzRxnxnYTdHIs7BXZ5aQ=w60-h60-p-rp-mo-br100',
+        alt: 'Saed Aladam',
       },
-      href: '/',
+      href: 'https://g.co/kgs/vCj6Dd9',
     },
   ],
 };
@@ -340,36 +341,37 @@ export const faqs2Home: FAQsProps = {
   header: {
     title: 'Frequently Asked Questions',
     subtitle:
-      'Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar.',
+      'Here you can find answers to the most common questions about our Honda car maintenance services.',
     tagline: 'FAQS',
   },
   items: [
     {
-      title: 'What do I need to start?',
-      description: `Nunc mollis tempor quam, non fringilla elit sagittis in. Nullam vitae consectetur mi, a elementum arcu. Sed laoreet, ipsum et vehicula dignissim, leo orci pretium sem, ac condimentum tellus est quis ligula.`,
+      title: 'What services does Hossam Center for Maintenance provide?',
+      description: `We specialize in the maintenance of Honda vehicles, offering services such as comprehensive vehicle inspections, oil and filter changes, engine maintenance, brake system checks, air conditioning services, and the installation of original spare parts.`,
     },
     {
-      title: 'How to install the NextJS + Tailwind CSS template?',
-      description: `Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eleifend vestibulum nisl in iaculis. Mauris dictum ac purus vestibulum auctor. Praesent imperdiet lectus et massa faucibus, quis viverra massa rhoncus.`,
+      title: 'Do you offer original Honda parts?',
+      description: `Yes, we provide both original and high-quality commercial spare parts for Honda vehicles. We ensure that all parts meet the highest standards of performance and durability.`,
     },
     {
-      title: "What's something that you completely don't understand?",
-      description: `Mauris vitae eros a dui varius luctus. Suspendisse rutrum, sapien nec blandit bibendum, justo sapien sollicitudin erat, id aliquam sapien purus quis leo. Aliquam vulputate vestibulum consectetur.`,
+      title: 'How can I book a maintenance appointment?',
+      description: `You can easily book a maintenance appointment by contacting us via phone, email, or through the online booking form on our website. We recommend booking in advance to ensure availability.`,
     },
     {
-      title: "What's an example of when you changed your mind?",
-      description: `Nunc dapibus lacinia ipsum ut elementum. Integer in pretium sapien. Ut pretium nisl mauris, ut rutrum justo condimentum id. Etiam aliquet, arcu at iaculis laoreet, est arcu egestas sapien, eget sollicitudin odio orci et nunc.`,
+      title: 'Do you offer a vehicle inspection service?',
+      description: `Yes, we offer a comprehensive vehicle inspection service that covers all essential components, including the engine, brakes, air conditioning, and overall vehicle performance to ensure everything is running smoothly.`,
     },
     {
-      title: 'What is something that you would really like to try again?',
-      description: `Duis in maximus mauris, id eleifend mauris. Nam a fringilla arcu. Curabitur convallis, tellus non aliquet rhoncus, lacus massa auctor eros, in interdum lectus augue sed augue. Fusce tempor ex id faucibus efficitur.`,
+      title: 'How often should I service my Honda vehicle?',
+      description: `It is recommended to service your Honda vehicle every 5,000 to 7,500 miles, depending on the model and usage. Regular maintenance ensures optimal performance and longevity of your car.`,
     },
     {
-      title: 'If you could only ask one question to each person you meet, what would that question be?',
-      description: `Nullam imperdiet sapien tincidunt erat dapibus faucibus. Vestibulum a sem nec lorem imperdiet scelerisque non sed lacus. Ut pulvinar id diam vitae auctor. Nam tempus, neque et elementum consectetur, ex ipsum pulvinar risus, vel sodales ligula tortor eu eros.`,
+      title: 'Can I get a quote before the maintenance starts?',
+      description: `Absolutely. We provide detailed cost estimates after a thorough inspection of your vehicle. This ensures transparency and allows you to understand the work needed before proceeding.`,
     },
   ],
 };
+
 
 // Pricing data on Home page *******************
 export const pricingHome: PricingProps = {
@@ -580,30 +582,30 @@ export const contactHome: ContactProps = {
   hasBackground: true,
   header: {
     title: 'Get in Touch',
-    subtitle: 'In hac habitasse platea dictumst',
-    tagline: 'Contact',
+    subtitle: 'We are here to provide the best Honda vehicle services',
+    tagline: 'Contact Us',
   },
   content:
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec ipsum orci. Ut scelerisque sagittis ante, ac tincidunt sem venenatis ut.',
+    'Feel free to reach out to us for any inquiries, appointment scheduling, or additional information about our services. Our team is here to assist you with all your Honda vehicle maintenance needs.',
   items: [
     {
       title: 'Our Address',
-      description: ['1230 Maecenas Street Donec Road', 'New York, EEUU'],
+      description: ['Hossam Maintenance Center, Amman, Jordan'],
       icon: IconMapPin,
     },
     {
       title: 'Contact',
-      description: ['Mobile: +1 (123) 456-7890', 'Mail: tailnext@gmail.com'],
+      description: ['Mobile: +962 123 4567', 'Email: hossamcenter@example.com'],
       icon: IconPhoneCall,
     },
     {
       title: 'Working hours',
-      description: ['Monday - Friday: 08:00 - 17:00', 'Saturday & Sunday: 08:00 - 12:00'],
+      description: ['Sunday - Thursday: 09:00 - 18:00', 'Friday: Closed'],
       icon: IconClock,
     },
   ],
   form: {
-    title: 'Ready to Get Started?',
+    title: 'Ready to Schedule a Service?',
     inputs: [
       {
         type: 'text',
@@ -621,7 +623,7 @@ export const contactHome: ContactProps = {
     textarea: {
       cols: 30,
       rows: 5,
-      name: 'textarea',
+      name: 'message',
       placeholder: 'Write your message...',
     },
     btn: {
@@ -631,30 +633,31 @@ export const contactHome: ContactProps = {
   },
 };
 
+
 // CallToAction data *******************
 export const callToAction2Home: CallToActionProps = {
-  title: 'Next.js + Tailwind CSS',
+  title: 'Exceptional Honda Vehicle Services',
   subtitle:
-    'Aliquam sodales porttitor lacus ac tristique. Etiam posuere elit at leo feugiat sodales. Sed ac mauris quis sem tempor condimentum non at metus.',
+    'Experience top-tier maintenance and support for your Honda vehicle at Hossam Maintenance Center. Our expert team is ready to ensure your vehicle runs smoothly and efficiently.',
   callToAction: {
-    text: 'Get template',
-    href: 'https://github.com/onwidget/tailnext',
-    icon: IconDownload,
+    text: 'Book Your Appointment',
+    href: '/contact',
+    icon: IconCalendar,
   },
   items: [
     {
-      title: 'Get template',
-      description: 'Aliquam sodales est lectus, quis.',
-      href: 'https://github.com/onwidget/tailnext',
+      title: 'Learn About Our Services',
+      description: 'Discover our full range of services for Honda vehicles.',
+      href: '/services',
     },
     {
-      title: 'Learn more',
-      description: 'Class aptent taciti sociosqu ad litora torquent per conubia.',
-      href: '/',
+      title: 'Why Choose Us',
+      description: 'We are committed to providing exceptional service with over 30 years of experience.',
+      href: '/about',
     },
     {
-      title: 'Subscribe',
-      description: 'Morbi orci nunc, euismod ac dui id, convallis.',
+      title: 'Subscribe for Updates',
+      description: 'Stay informed about our latest offers and updates.',
       form: {
         icon: IconMail,
         input: {
@@ -671,3 +674,4 @@ export const callToAction2Home: CallToActionProps = {
     },
   ],
 };
+

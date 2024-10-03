@@ -222,6 +222,10 @@ type Links = {
   title?: string;
   links?: Array<Link>;
   texts?: Array<string>;
+  logo?: {
+    src: string; // The source path of the logo image
+    alt: string; // Alt text for the logo image
+  };
 };
 
 type Tab = {
@@ -312,7 +316,12 @@ type FeaturesProps = Widget & {
   image?: Image;
   isBeforeContent?: boolean;
   isAfterContent?: boolean;
+  additionalContent?: Array<{
+    title: string; // Title for additional content
+    description: string; // Description for additional content
+  }>;
 };
+
 
 type ContentProps = Widget & {
   header?: Header;

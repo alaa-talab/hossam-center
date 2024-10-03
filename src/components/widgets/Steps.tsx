@@ -11,7 +11,7 @@ const Steps = ({
   items,
   isImageDisplayed = true,
   image,
-  isReversed = false,
+  isReversed = true, // Set to true to have the image on the left side
   hasBackground = false,
 }: StepsProps) => (
   <WidgetWrapper
@@ -20,15 +20,15 @@ const Steps = ({
     containerClass="max-w-7xl mx-auto px-6 lg:px-12 py-16"
   >
     <div
-      className={`flex flex-col gap-12 md:gap-16 ${isReversed ? 'md:flex-row-reverse' : ''} ${
-        isImageDisplayed ? 'md:flex-row' : ''
-      }`}
+      className={`flex flex-col gap-12 md:gap-16 ${
+        isReversed ? 'md:flex-row-reverse' : 'md:flex-row'
+      } ${isImageDisplayed ? 'md:flex-row' : ''}`}
     >
       {/* Steps and Content */}
       <div
         className={`md:py-4 ${
           isImageDisplayed
-            ? 'md:pr-16 md:rtl:pr-0 md:rtl:pl-16 md:basis-1/2'
+            ? 'md:pl-16 md:rtl:pl-0 md:rtl:pr-16 md:basis-1/2'
             : 'max-w-4xl mx-auto md:self-center'
         }`}
       >
@@ -37,15 +37,17 @@ const Steps = ({
             header={header}
             containerClass={isImageDisplayed ? 'text-left rtl:text-right' : 'text-center'}
             titleClass="text-4xl sm:text-5xl font-extrabold leading-tight"
-            subtitleClass={`${isImageDisplayed ? 'text-left rtl:text-right' : 'text-center'} text-lg sm:text-xl text-gray-500`}
+            subtitleClass={`${
+              isImageDisplayed ? 'text-left rtl:text-right' : 'text-center'
+            } text-lg sm:text-xl text-gray-500`}
           />
         )}
-       <Timeline
-  items={items}
-  defaultIcon={IconCheck}
-  iconClass="text-primary border-primary-900"
-  titleClass="animate-fadeInUp"
-/>
+        <Timeline
+          items={items}
+          defaultIcon={IconCheck}
+          iconClass="text-primary border-primary-900"
+          titleClass="animate-fadeInUp"
+        />
       </div>
 
       {/* Image Section */}
@@ -59,7 +61,6 @@ const Steps = ({
               width={1200}
               height={800}
               objectFit="cover"
-              placeholder="blur"
               className="rounded-xl shadow-2xl"
               quality={100}
             />

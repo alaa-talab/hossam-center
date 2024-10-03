@@ -7,39 +7,60 @@ import Stats from '~/components/widgets/Stats';
 import Steps from '~/components/widgets/Steps';
 import { notFound } from 'next/navigation'; // Import notFound
 import {
-  heroCarDiagnostic,
-  statsCarDiagnostic,
-  featuresCarDiagnostic,
-  stepsCarDiagnostic,
-  faqsCarDiagnostic,
-  contactCarDiagnostic,
-} from '~/shared/data/pages/car-computer-diagnostic.data';
+  heroradarcalibration,
+  statsradarcalibration,
+  featuresradarcalibration,
+  stepsradarcalibration,
+  faqsradarcalibration,
+  contactradarcalibration,
+} from '~/shared/data/pages/radar calibration.data';
 
 export const metadata: Metadata = {
-  title: 'Computer Software Update',
+  title: 'Radar Calibration Services',
 };
 
-const CarDiagnosticPage = () => {
+const RadarCalibrationPage = () => {
   return (
     <>
-      <Hero2 {...heroCarDiagnostic} />
-      <Stats {...statsCarDiagnostic} />
-      <Steps {...stepsCarDiagnostic} />
-      <FAQs {...faqsCarDiagnostic} />
+      {/* Hero Section */}
+      <Hero2 {...heroradarcalibration} />
+
+      {/* Stats Section */}
+      <Stats {...statsradarcalibration} />
+
+      {/* Features Section */}
+      <Features {...featuresradarcalibration} />
+
+      {/* Steps Section */}
+      <Steps
+        id={stepsradarcalibration.id}
+        header={{
+          title: 'Our Calibration Process',
+          subtitle: 'Step-by-step process to ensure accurate calibration.',
+        }}
+        items={stepsradarcalibration.items}
+        image={stepsradarcalibration.image} // Pass the image object here
+      />
+
+      {/* FAQs Section */}
+      <FAQs {...faqsradarcalibration} />
+
+      {/* Contact Section */}
       <Contact
         form={{
           title: 'Get in touch',
-          description: 'Contact us today for more details.',
+          description: 'Contact us today for more details about our radar calibration services.',
           inputs: [
             { label: 'Name', type: 'text', placeholder: 'Enter your name' },
-            { label: 'Email', type: 'email', placeholder: 'Enter your email' }
+            { label: 'Email', type: 'email', placeholder: 'Enter your email' },
+            { label: 'Message', type: 'textarea', placeholder: 'Describe your issue or request' }
           ],
           btn: { title: 'Send Message', type: 'submit' }
         }}
-        {...contactCarDiagnostic}
+        {...contactradarcalibration}
       />
     </>
   );
 };
 
-export default CarDiagnosticPage;
+export default RadarCalibrationPage;

@@ -20,5 +20,6 @@ module.exports = {
         hostname: 'source.unsplash.com',
       },
     ],
+    domains: ['res.cloudinary.com', 'lh3.googleusercontent.com'],
   }
 };

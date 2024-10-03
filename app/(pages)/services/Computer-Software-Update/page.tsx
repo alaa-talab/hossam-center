@@ -1,12 +1,13 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Contact from '~/components/widgets/Contact';
+import Contact from '~/components/widgets/Contact2';
 import FAQs from '~/components/widgets/FAQs';
 import Features from '~/components/widgets/Features';
 import Hero2 from '~/components/widgets/Hero2';
 import Stats from '~/components/widgets/Stats';
 import Steps from '~/components/widgets/Steps';
 import { notFound } from 'next/navigation'; // Import notFound if needed for error handling
+
 import {
   heroSoftwareUpdate, // Use SoftwareUpdate data
   statsSoftwareUpdate,
@@ -15,6 +16,7 @@ import {
   faqsSoftwareUpdate,
   contactSoftwareUpdate,
 } from '~/shared/data/pages/computer-software-update.data'; // Import the correct data
+import Contact2 from '~/components/widgets/Contact2';
 
 export const metadata: Metadata = {
   title: 'Computer Software Update',
@@ -26,6 +28,9 @@ const SoftwareUpdatePage = () => {
       {/* Hero Section */}
       <Hero2 {...heroSoftwareUpdate} />
 
+      {/* Features Section */}
+      <Features {...featuresSoftwareUpdate} />
+
       {/* Stats Section */}
       <Stats {...statsSoftwareUpdate} />
 
@@ -36,18 +41,14 @@ const SoftwareUpdatePage = () => {
       <FAQs {...faqsSoftwareUpdate} />
 
       {/* Contact Section */}
-      <Contact
-        form={{
-          title: 'Get in touch',
-          description: 'Contact us today to schedule your software update.',
-          inputs: [
-            { label: 'Name', type: 'text', placeholder: 'Enter your name' },
-            { label: 'Email', type: 'email', placeholder: 'Enter your email' },
-            { label: 'Message', type: 'textarea', placeholder: 'Enter your message' },
-          ],
-          btn: { title: 'Send Message', type: 'submit' }
+      <Contact2
+        header={{
+          title: contactSoftwareUpdate.title,
+          subtitle: contactSoftwareUpdate.subtitle,
         }}
-        {...contactSoftwareUpdate}
+        form={contactSoftwareUpdate.form}
+        id={contactSoftwareUpdate.id}
+        hasBackground={contactSoftwareUpdate.hasBackground}
       />
     </>
   );
