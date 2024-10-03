@@ -7,6 +7,7 @@ import {
   IconRss,
 } from '@tabler/icons-react';
 import { AnnouncementProps, FooterProps, HeaderProps } from '../types';
+import Image from 'next/image';
 
 // Announcement data
 export const announcementData: AnnouncementProps = {
@@ -240,11 +241,14 @@ export const footerData2: FooterProps = {
   footNote: (
     <div className="mr-4 rtl:mr-0 rtl:ml-4 text-sm flex items-center">
       {/* Use the logo */}
-      <img
-        src="https://dfeelings.com/wp-content/uploads/2024/02/Dfeelings-logo-white.svg"
-        alt="Dfeelings Logo"
-        className="mr-2 rtl:ml-2 h-6" // Adjust the size of the logo as needed
-      />
+      <Image
+    src="https://dfeelings.com/wp-content/uploads/2024/02/Dfeelings-logo-white.svg"
+    alt="Dfeelings Logo"
+    width={24} // Adjust width as needed
+    height={24} // Adjust height as needed
+    className="mr-2 rtl:ml-2" // You can still apply CSS classes for additional styling
+  />
+
       <span className="text-gray-600 dark:text-gray-400">
         All rights reserved to Hossam Center 2024
       </span>

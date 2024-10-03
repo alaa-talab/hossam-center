@@ -377,7 +377,7 @@ type ContactProps = Widget & {
   header?: Header;
   content?: string;
   items?: Array<Item>;
-  form: FormProps;
+  form?: FormProps;
   image?: {
     src: string;
     alt: string;

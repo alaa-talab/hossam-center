@@ -90,6 +90,7 @@ export const contactCarDiagnostic: CallToActionProps = {
       { label: 'Email', type: 'email', placeholder: 'Enter your email' },
       { label: 'Message', type: 'textarea', placeholder: 'Enter your message' },
     ],
+   
     btn: {
       title: 'Send Message',
       type: 'submit',
