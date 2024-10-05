@@ -5,8 +5,8 @@ const Announcement = () => {
   const { title, callToAction, callToAction2 } = announcementData;
 
   return (
-    <div className="hidden overflow-hidden text-ellipsis whitespace-nowrap border-b border-blue-900 bg-blue-900 px-3 py-2 text-sm text-gray-200 md:block">
-      <span className="bg-blue-800 py-0.5 px-1 text-xs font-semibold">{title}</span>{' '}
+    <div className="hidden overflow-hidden text-ellipsis whitespace-nowrap border-b border-gray-900 bg-red-700 px-3 py-2 text-sm text-gray-200 md:block">
+      <span className="bg-gray-800 py-0.5 px-1 text-xs font-semibold">{title}</span>{' '}
       {callToAction && callToAction.text && callToAction.href && (
         <a
           href={callToAction.href}
@@ -26,10 +26,10 @@ const Announcement = () => {
           title={callToAction2.text}
         >
           <img
-            src="https://img.shields.io/twitter/url/https/twitter.com/onwidget.svg?style=social&amp;label=Follow%20%40onWidget"
+            src="https://res.cloudinary.com/dvcfefmys/image/upload/v1728119218/follow-us-on-facebook_wm4rcz.svg"
             alt="Follow @onWidget"
-            width="125"
-            height="20"
+            width="90"
+            height="10"
           />
         </a>
       )}

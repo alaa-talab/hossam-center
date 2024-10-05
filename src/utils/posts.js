@@ -1,38 +1,68 @@
-import axios from 'axios';
+import fs from 'fs';
+import matter from 'gray-matter';
+import { join } from 'path';
 
-const API_URL = 'http://localhost:1337/api/articles';  // Base URL
+const BLOG_DIR = join(process.cwd(), 'src/content/blog');
 
-/** Fetch all articles from Strapi */
-export async function fetchPosts() {
-  const res = await axios.get(`${API_URL}`);  // Corrected API call
-  return res.data.data.map((post) => ({
-    slug: post.slug,
-    title: post.title,
-    content: post.description, // Adjust according to your Strapi model
-    publishDate: post.publishedAt,
-    image: post.image?.url || '/default-image.jpg',
-  }));
-}
+const load = () => {
+  const files = fs.readdirSync(BLOG_DIR);
 
-/** Find the latest articles */
+  const posts = Promise.all(
+    files
+      .filter((filename) => filename.endsWith('.md'))
+      .map(async (filename) => {
+        const slug = filename.replace('.md', '');
+        return await findPostBySlug(slug);
+      }),
+  );
+
+  return posts;
+};
+
+let _posts;
+
+/** */
+export const fetchPosts = async () => {
+  _posts = _posts || load();
+
+  return await _posts;
+};
+
+/** */
 export const findLatestPosts = async ({ count } = {}) => {
   const _count = count || 4;
   const posts = await fetchPosts();
-  return posts ? posts.slice(-_count) : [];
+
+  return posts ? posts.slice(_count * -1) : [];
 };
 
-/** Find an article by slug */
-export async function findPostBySlug(slug) {
-  const res = await axios.get(`${API_URL}?filters[slug][$eq]=${slug}`);  // Corrected API call
-  const post = res.data.data[0];
+/** */
+export const findPostBySlug = async (slug) => {
+  if (!slug) return null;
 
-  if (!post) return null;
+  try {
+    const readFile = fs.readFileSync(join(BLOG_DIR, `${slug}.md`), 'utf-8');
+    const { data: frontmatter, content } = matter(readFile);
+    return {
+      slug,
+      ...frontmatter,
+      content,
+    };
+  } catch (e) {}
 
-  return {
-    slug: post.slug,
-    title: post.title,
-    content: post.description, // Adjust according to your Strapi model
-    publishDate: post.publishedAt,
-    image: post.image?.url || '/default-image.jpg',
-  };
-}
+  return null;
+};
+
+/** */
+export const findPostsByIds = async (ids) => {
+  if (!Array.isArray(ids)) return [];
+
+  const posts = await fetchPosts();
+
+  return ids.reduce(function (r, id) {
+    posts.some(function (post) {
+      return id === post.id && r.push(post);
+    });
+    return r;
+  }, []);
+};

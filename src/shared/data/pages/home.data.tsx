@@ -127,7 +127,7 @@ export const featuresHome: FeaturesProps = {
       , // Update with an appropriate icon
       callToAction: {
         text: 'Learn more',
-        href: '/services#engine-maintenance',
+        href: '/services/Maintenance',
       },
     },
     {
@@ -137,7 +137,7 @@ export const featuresHome: FeaturesProps = {
       icon: IconCarTurbine, // Update with an appropriate icon
       callToAction: {
         text: 'Learn more',
-        href: '/services#inspection',
+        href: '/services/Spare-Parts',
       },
     },
     {
@@ -147,7 +147,7 @@ export const featuresHome: FeaturesProps = {
       icon: IconCarCrash, // Update with an appropriate icon
       callToAction: {
         text: 'Discover now',
-        href: '/services#oil-change',
+        href: '/services/Radar-Calibration',
       },
     },
     {
@@ -157,7 +157,7 @@ export const featuresHome: FeaturesProps = {
       icon: IconDeviceDesktopAnalytics, // Update with an appropriate icon
       callToAction: {
         text: 'Learn more',
-        href: '/services#spare-parts',
+        href: '/services/Car-Computer-Diagnostic',
       },
     },
     {
@@ -167,7 +167,7 @@ export const featuresHome: FeaturesProps = {
       icon: IconRotate2, // Update with an appropriate icon
       callToAction: {
         text: 'Learn more',
-        href: '/services#air-conditioning',
+        href: '/services/Computer-Software-Update',
       },
     },
   

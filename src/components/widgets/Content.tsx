@@ -47,7 +47,6 @@ const Content = ({
                 height={828}
                 alt={image.alt}
                 sizes="(max-width: 768px) 100vw, 432px"
-                placeholder="blur"
                 quality={50}
               />
             </div>

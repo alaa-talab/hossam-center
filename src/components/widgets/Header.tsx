@@ -8,9 +8,11 @@
   import Logo from '~/components/atoms/Logo';
   import ToggleMenu from '../atoms/ToggleMenu';
   import { headerData } from '~/shared/data/global.data';
+ 
 
 
   const Header = () => {
+    
     const { links, actions, isSticky, showToggleTheme, showRssFeed, position } = headerData;
 
     const ref = useRef(null);
@@ -92,55 +94,57 @@
               ref={ref}
               className="flex w-full flex-col mt-2 mb-36 md:m-0 text-xl md:w-auto md:flex-row md:self-center md:pt-0 md:text-base"
             >
-              {links &&
-                links.map(({ label, href, icon: Icon, links }, index) => (
-                  <li key={`item-link-${index}`} className={links?.length ? 'dropdown' : ''}>
-                    {links && links.length ? (
-                      <>
-                        <button
-                          className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out hover:text-gray-900 dark:hover:text-white"
-                          onClick={() => handleDropdownOnClick(index)}
-                        >
-                          {label}{' '}
-                          {Icon && (
-                            <Icon
-                              className={`${
-                                isDropdownOpen[index] ? 'rotate-180' : ''
-                              } ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden h-3.5 w-3.5 md:inline`}
-                            />
-                          )}
-                        </button>
-                        <ul
-                          className={`${
-                            isDropdownOpen[index] ? 'block' : 'md:hidden'
-                          } rounded pl-4 font-medium drop-shadow-xl md:absolute md:min-w-[200px] md:bg-white/90 md:pl-0 md:backdrop-blur-md dark:md:bg-slate-900/90 md:border md:border-gray-200 md:dark:border-slate-700`}
-                        >
-                          {links.map(({ label: label2, href: href2 }, index2) => (
-                            <li key={`item-link-${index2}`}>
-                              <Link
-                                className="whitespace-no-wrap block py-2 px-5 first:rounded-t last:rounded-b dark:hover:bg-gray-700 md:hover:bg-gray-200"
-                                href={href2 as string}
-                                onClick={() =>
-                                  isToggleMenuOpen ? handleToggleMenuOnClick() : handleCloseDropdownOnClick(index)
-                                }
-                              >
-                                {label2}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </>
-                    ) : (
-                      <Link
-                        className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out hover:text-gray-900 dark:hover:text-white"
-                        href={href as string}
-                        onClick={() => (isToggleMenuOpen ? handleToggleMenuOnClick() : handleDropdownOnClick(index))}
-                      >
-                        {label}
-                      </Link>
-                    )}
-                  </li>
-                ))}
+             {links && links.map(({ label, href, icon: Icon, links }, index) => (
+  <li key={`item-link-${index}`} className={links?.length ? 'dropdown' : ''}>
+    {links && links.length ? (
+      <>
+        <Link
+                       className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out hover:text-gray-900 dark:hover:text-white"
+                       onMouseOver={() => handleDropdownOnClick(index)} // Open dropdown on hover
+                       onClick={() =>
+                        isToggleMenuOpen ? handleToggleMenuOnClick() : handleCloseDropdownOnClick(index)
+                      }
+                       href={'/services'}>
+  {label}
+  {Icon && (
+    <Icon
+      className={`${
+        isDropdownOpen[index] ? 'rotate-180' : ''
+      } ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden h-3.5 w-3.5 md:inline`}
+    />
+  )}
+</Link>
+        <ul
+          className={`${
+            isDropdownOpen[index] ? 'block' : 'md:hidden'
+          } rounded pl-4 font-medium drop-shadow-xl md:absolute md:min-w-[200px] md:bg-white/90 md:pl-0 md:backdrop-blur-md dark:md:bg-slate-900/90 md:border md:border-gray-200 md:dark:border-slate-700`}
+        >
+          {links.map(({ label: label2, href: href2 }, index2) => (
+            <li key={`item-link-${index2}`}>
+              <Link
+                className="whitespace-no-wrap block py-2 px-5 first:rounded-t last:rounded-b dark:hover:bg-gray-700 md:hover:bg-gray-200"
+                href={href2 as string}
+                onClick={() =>
+                  isToggleMenuOpen ? handleToggleMenuOnClick() : handleCloseDropdownOnClick(index)
+                }
+              >
+                {label2}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </>
+    ) : (
+      <Link
+        className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out hover:text-gray-900 dark:hover:text-white"
+        href={href as string}
+        onClick={() => (isToggleMenuOpen ? handleToggleMenuOnClick() : handleDropdownOnClick(index))}
+      >
+        {label}
+      </Link>
+    )}
+  </li>
+))}
             </ul>
           </nav>
           <div

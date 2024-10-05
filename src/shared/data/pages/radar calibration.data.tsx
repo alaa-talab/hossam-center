@@ -5,7 +5,7 @@ import { CallToActionProps, FAQsProps, HeroProps } from '~/shared/types';
 export const heroradarcalibration: HeroProps = {
   title: 'Radar & Level Transmitter Calibration',
   subtitle: 'Expert calibration services to ensure accuracy and reliability for your radar and level transmitter systems.',
-  tagline: 'Precision Calibration at Hossam Center',
+  tagline: 'ADAS technology used by Honda',
   callToAction: {
     text: 'Get a Quote',
     href: '/contact',
@@ -74,10 +74,10 @@ export const featuresradarcalibration = {
     id: 'features-radar-calibration',
     header: {
       title: 'Why Choose Hossam Center for Radar Calibration?',
-      subtitle: 'We provide industry-leading calibration services to ensure the accuracy and reliability of your radar and level transmitter systems.',
+      subtitle: 'Honda has adopted advanced ADAS (Advanced Driving Assistance System) technology in its models to provide drivers with a variety of safety and driving assistance functions. These features are designed to increase driving safety and comfort and help reduce the risk of traffic accidents. The following is a detailed introduction to the ADAS functions of Honda:',
     },
     items: [
-      { title: 'Vega Level Transmitter Calibration', description: vegaLevelCalibrationContent },
+      { title: 'Collision warning and automatic emergency braking system:', description: vegaLevelCalibrationContent },
       { title: 'Radar System Calibration', description: radarCalibrationContent },
       { title: 'Radar Level Transmitter Calibration', description: radarLevelCalibrationContent },
       { title: 'Guided Wave Radar Calibration', description: guidedWaveRadarCalibrationContent },
