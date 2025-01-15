@@ -25,7 +25,9 @@ const CTA = ({ callToAction, containerClass, linkClass, iconClass }: LinkOrButto
                   iconClass
                 )} />
               )}
-              <span className="text-white hover:text-primary-400">{text}</span>
+              <span >
+                {text}
+              </span>
             </Link>
           ) : (
             <Link
@@ -41,7 +43,9 @@ const CTA = ({ callToAction, containerClass, linkClass, iconClass }: LinkOrButto
                   iconClass
                 )} />
               )}
-              <span className="text-white hover:text-primary-400">{text}</span>
+              <span >
+                {text}
+              </span>
             </Link>
           )}
         </div>

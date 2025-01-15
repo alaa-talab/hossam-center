@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         primary: colors.gray,
-        secondary: colors.blue,
+        secondary: colors.black,
       },
       fontFamily: {
         sans: ['var(--font-custom)', ...defaultTheme.fontFamily.sans],

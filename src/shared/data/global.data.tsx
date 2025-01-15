@@ -9,6 +9,7 @@ import {
 } from '@tabler/icons-react';
 import { AnnouncementProps, FooterProps, HeaderProps } from '../types';
 import Image from 'next/image';
+import Logo from '~/components/atoms/Logo';
 
 // Announcement data
 export const announcementData: AnnouncementProps = {
@@ -19,7 +20,7 @@ export const announcementData: AnnouncementProps = {
   },
   callToAction2: {
     text: 'Follow us for updates on social media!',
-    href: 'https://twitter.com/hossamcenter',
+    href: 'https://www.facebook.com/HondaHousam',
   },
 };
 
@@ -33,6 +34,13 @@ export const headerData: HeaderProps = {
     {
       label: 'Services',
       href: '/services',
+      links: [
+        { label: 'Car Computer Diagnostic', href: '/services/Car-Computer-Diagnostic' },
+        { label: 'Computer Software Update', href: '/services/Computer-Software-Update' },
+        { label: 'Maintenance', href: '/services/Maintenance' },
+        { label: 'Radar Calibration', href: '/services/Radar-Calibration' },
+        { label: 'Spare Parts', href: '/services/Spare-Parts' },
+      ],
     },
     {
       label: 'About Us',
@@ -78,24 +86,24 @@ export const footerData: FooterProps = {
       title: 'Services',
       links: [
         {
-          label: 'Engine Maintenance',
-          href: '/services#engine-maintenance',
+          label: 'Maintenance',
+          href: '/services/Maintenance',
         },
         {
-          label: 'Brake Inspection',
-          href: '/services#brake-inspection',
+          label: 'Spare Parts',
+          href: '/services/Spare-Parts',
         },
         {
-          label: 'Oil Change',
-          href: '/services#oil-change',
+          label: 'Radar Calibration',
+          href: '/services/Radar-Calibration',
         },
         {
-          label: 'Original Spare Parts',
-          href: '/services#spare-parts',
+          label: 'Car Computer Diagnostic',
+          href: '/services/Car-Computer-Diagnostic',
         },
         {
-          label: 'Comprehensive Vehicle Checkup',
-          href: '/services#vehicle-checkup',
+          label: 'Computer Software Update',
+          href: '/services/Computer-Software-Update',
         },
       ],
     },
@@ -103,13 +111,14 @@ export const footerData: FooterProps = {
       title: 'Contact',
       links: [
         {
-          label: 'Call us: +962 123 4567',
-          href: 'tel:+9621234567',
+          label: 'Call us: +962 987 6543 ',
+          href: 'tel:+9629876543',
         },
         {
-          label: 'Email: info@hossamcenter.com',
-          href: 'mailto:info@hossamcenter.com',
-        },
+          label: 'Email: hossamcenter@example.com',
+          href: 'mailto:hossamcenter@example.com'
+        }
+        
       ],
     },
     {
@@ -121,7 +130,7 @@ export const footerData: FooterProps = {
         },
         {
           label: 'Customer Support',
-          href: '/support',
+          href: '/contact',
         },
         {
           label: 'Appointment Booking',
@@ -131,27 +140,38 @@ export const footerData: FooterProps = {
     },
   ],
   socials: [
-    { label: 'Twitter', icon: IconBrandTwitter, href: 'https://twitter.com/hossamcenter' },
-    { label: 'Instagram', icon: IconBrandInstagram, href: 'https://instagram.com/hossamcenter' },
-    { label: 'Facebook', icon: IconBrandFacebook, href: 'https://facebook.com/hossamcenter' },
-    { label: 'RSS', icon: IconRss, href: '/rss' },
-    { label: 'Github', icon: IconBrandGithub, href: 'https://dfeelings.com/' },
+    { label: 'Tiktok', icon: IconBrandTiktok, href: 'https://www.tiktok.com/@housam.maintenance.honda?_t=8qEW0swwCJj&_r=1' },
+    { label: 'Instagram', icon: IconBrandInstagram, href: 'https://www.instagram.com/housammainten/' },
+    { label: 'Facebook', icon: IconBrandFacebook, href: 'https://www.facebook.com/HondaHousam' },
   ],
   footNote: (
     <div className="mr-4 rtl:mr-0 rtl:ml-4 text-sm flex items-center">
-      {/* Use the logo */}
-      <Image
-        src="https://dfeelings.com/wp-content/uploads/2024/02/Dfeelings-logo-white.svg"
-        alt="Dfeelings Logo"
-        width={24} // Adjust width as needed
-        height={24} // Adjust height as needed
-        className="mr-2 rtl:ml-2 h-6" // CSS classes for styling
-      />
+      {/* Light theme image */}
+      <a href="https://dfeelings.com/" target="_blank" rel="noopener noreferrer">
+        <Image
+          src="https://dfeelings.com/wp-content/uploads/2024/02/black-logo-01.svg" // Light theme logo
+          alt="Dfeelings Logo"
+          width={75}
+          height={75} 
+          className="mr-2 rtl:ml-2 dark:hidden" // Visible in light theme, hidden in dark theme
+        />
+      </a>
+      {/* Dark theme image */}
+      <a href="https://dfeelings.com/" target="_blank" rel="noopener noreferrer">
+        <Image
+          src="https://dfeelings.com/wp-content/uploads/2024/02/Dfeelings-logo-white.svg" // Dark theme logo
+          alt="Dfeelings Logo Dark"
+          width={75}
+          height={75}
+          className="mr-2 rtl:ml-2 hidden dark:block" // Visible in dark theme, hidden in light theme
+        />
+      </a>
       <span className="text-gray-600 dark:text-gray-400">
         All rights reserved to Hossam Center 2024
       </span>
     </div>
   ),
+  
 };
 
 // Footer2 data
@@ -180,19 +200,8 @@ export const footerData2: FooterProps = {
       texts: ['Mobile: +962 123 4567', 'Office: +962 987 6543'],
      
     },
-    {
-      title: 'Email',
-      texts: ['info@hossamcenter.com'],
-      
-    },
-    {
-      logo: {
-        src: '/Website Logo.png',  // Path to your logo image
-        alt: 'Logo Alt Text',
-        width: 300,  // Specify the width
-        height: 300,  // Specify the height
-      },
-    }
+    
+   
   ],
   socials: [
     { label: 'Tiktok', icon: IconBrandTiktok, href: 'https://tiktok.com' },
@@ -201,6 +210,8 @@ export const footerData2: FooterProps = {
   ],
   footNote: (
     <div className="mr-4 rtl:mr-0 rtl:ml-4 text-sm flex items-center">
+      
+
       <a href="https://dfeelings.com/" target="_blank" rel="noopener noreferrer">
         <Image
           src="https://dfeelings.com/wp-content/uploads/2024/02/Dfeelings-logo-white.svg"

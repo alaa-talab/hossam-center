@@ -1,74 +1,88 @@
 import { footerData } from '~/shared/data/global.data';
 import Logo from '~/components/atoms/Logo'; // Import your logo component
+import Link from 'next/link'; // Import Link from Next.js
 
 const Footer = () => {
   const { title, links, columns, socials, footNote } = footerData;
 
   return (
-    <footer className="relative border-t border-gray-200 dark:border-slate-800">
-      <div className="dark:bg-dark pointer-events-none absolute inset-0"></div>
-      <div className="relative mx-auto max-w-7xl px-4 dark:text-slate-300 sm:px-6">
-        <div className="grid grid-cols-12 gap-4 gap-y-8 py-8 sm:gap-8 md:py-12">
+    <footer className="relative border-t border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-gray-900">
+      <div className="relative mx-auto max-w-7xl px-4 py-10 dark:text-slate-300 sm:px-6">
+        <div className="grid grid-cols-12 gap-6 md:gap-8 lg:gap-12 py-8 md:py-12">
           <div className="col-span-12 lg:col-span-4">
-            <div className="mb-2">
-              {/* Replace the title with the Logo component */}
-              <a className="inline-block" href="/">
+            <div className="mb-6">
+              <Link href="/" passHref>
                 <Logo /> {/* Use the Logo component here */}
-              </a>
+              </Link>
             </div>
-            <div className="text-muted text-sm">
-              <ul className="mb-4 flex pr-2 rtl:pr-0 rtl:pl-2 md:order-1 md:mb-0">
-                {links &&
-                  links.map(({ label, href }, index) => (
-                    <li key={`item-link-${index}`}>
-                      <a
-                        className="duration-150 ease-in-out placeholder:transition hover:text-gray-700 hover:underline dark:text-gray-400"
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+              We provide exceptional maintenance services for Honda vehicles. Visit us for all your car service needs!
+            </p>
+            <ul className="flex space-x-4 rtl:space-x-reverse">
+              {links &&
+                links.map(({ label, href }, index) => (
+                  <li key={`item-link-${index}`}>
+                    {href ? (
+                      <Link
+                        href={href} // Only render if href is defined
+                        className="duration-150 ease-in-out hover:text-primary-500 dark:hover:text-primary-400 text-gray-600 dark:text-gray-400"
                         aria-label={label}
-                        href={href}
                       >
                         {label}
-                      </a>
-                      {links.length - 1 !== index && <span className="mr-1 rtl:mr-0 rtl:ml-1"> · </span>}
-                    </li>
-                  ))}
-              </ul>
-            </div>
+                      </Link>
+                    ) : (
+                      <span className="text-muted">{label}</span> // Fallback for undefined href
+                    )}
+                    {links.length - 1 !== index && <span className="mx-1 text-gray-400">·</span>}
+                  </li>
+                ))}
+            </ul>
           </div>
+
           {columns.map(({ title, links }, index) => (
             <div key={`item-column-${index}`} className="col-span-6 md:col-span-3 lg:col-span-2">
-              <div className="mb-2 font-medium dark:text-gray-300">{title}</div>
-              <ul className="text-sm">
+              <div className="mb-4 text-lg font-semibold text-gray-800 dark:text-gray-300">{title}</div>
+              <ul className="text-sm space-y-2">
                 {links &&
                   links.map(({ label, href }, index2) => (
-                    <li key={`item-column-link-${index2}`} className="mb-2">
-                      <a
-                        className="text-muted transition duration-150 ease-in-out hover:text-gray-700 hover:underline dark:text-gray-400"
+                    <li key={`item-column-link-${index2}`}>
+                      <Link
+                        href={href ?? '/'} // Provide fallback href if undefined
+                        className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-150 ease-in-out"
                         aria-label={label}
-                        href={href}
                       >
                         {label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
               </ul>
             </div>
           ))}
         </div>
-        <div className="py-6 md:flex md:items-center md:justify-between md:py-8">
-          <ul className="mb-4 flex md:order-1 md:ml-4 rtl:md:ml-0 rtl:md:mr-4 md:mb-0">
-            {socials.map(({ label, icon: Icon, href }, index) => (
-              <li key={`item-social-${index}`}>
-                <a
-                  className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-                  aria-label={label}
-                  href={href}
-                >
-                  {Icon && <Icon className="h-5 w-5" />}
-                </a>
-              </li>
-            ))}
-          </ul>
-          {footNote}
+
+        <div className="border-t border-gray-200 dark:border-gray-700 pt-8 mt-8">
+          <div className="md:flex md:items-center md:justify-between">
+            <ul className="mb-6 md:mb-0 flex space-x-6 rtl:space-x-reverse">
+              {socials.map(({ label, icon: Icon, href }, index) => (
+                <li key={`item-social-${index}`}>
+                  {href ? (
+                    <Link
+                      href={href} // Only render if href is defined
+                      className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-150 ease-in-out"
+                      aria-label={label}
+                    >
+                      {Icon && <Icon className="h-6 w-6" />}
+                    </Link>
+                  ) : (
+                    <span className="text-muted">{label}</span> // Fallback for undefined href
+                  )}
+                </li>
+              ))}
+            </ul>
+            <div className="text-gray-600 dark:text-gray-400 text-sm text-center md:text-left">
+              {footNote}
+            </div>
+          </div>
         </div>
       </div>
     </footer>

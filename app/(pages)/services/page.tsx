@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import CallToAction from '~/components/widgets/CallToAction';
 import Content from '~/components/widgets/Content';
-import FAQs from '~/components/widgets/FAQs';
+import FAQs2 from '~/components/widgets/FAQs2';
 import Features2 from '~/components/widgets/Features2';
 import Features4 from '~/components/widgets/Features4';
 import Hero from '~/components/widgets/Hero';
@@ -30,7 +30,7 @@ const Page = () => {
       <Content {...contentServicesTwo} />
       <Features4 {...features4Services} />
       <Testimonials {...testimonialsServices} />
-      <FAQs {...faqsServices} />
+      <FAQs2 {...faqsServices} />
       <CallToAction {...callToActionServices} />
     </>
   );
