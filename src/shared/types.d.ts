@@ -223,6 +223,8 @@ type Links = {
   links?: Array<Link>;
   texts?: Array<string>;
   logo?: {
+    height: number;
+    width: number;
     src: string; // The source path of the logo image
     alt: string; // Alt text for the logo image
   };
