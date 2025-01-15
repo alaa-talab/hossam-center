@@ -7,11 +7,10 @@ export const heroContact: HeroProps = {
   title: 'Get in touch with us',
   subtitle: (
     <>
-      <span className="hidden md:inline">{`Thank you for considering us for your project! We're excited to hear from you.`}</span>{' '}
-      {`Our team can assist you in building your dream website.`}
+      <span className="hidden md:inline">{`Thank you for choosing Hossam Maintenance Center for your Honda car maintenance needs.`}</span>{' '}
+      {`We are dedicated to providing exceptional service and ensuring your satisfaction. Reach out to us today and let us assist you.`}
     </>
   ),
-  tagline: 'Demo Contact Page',
 };
 
 // Contact data on Contact page *******************

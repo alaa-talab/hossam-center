@@ -26,6 +26,9 @@ import {
   teamHome,
   testimonialsHome,
 } from '~/shared/data/pages/home.data';
+import Features2 from '~/components/widgets/Features2';
+import Features3 from '~/components/widgets/Features3';
+import Features4 from '~/components/widgets/Features4';
 
 export const metadata: Metadata = {
   title: SITE.title,

@@ -34,26 +34,23 @@ import {
   IconScale,
   IconThumbUp,
   IconUser,
+  IconShieldCheckFilled
 } from '@tabler/icons-react';
+
 
 // Hero2 data on About page *******************
 export const hero2About: HeroProps = {
-  title: 'Great companies are made by great people',
+  title: 'Welcome to Hossam Maintenance Center',
   subtitle:
-    'Vivamus venenatis, lectus a pellentesque placerat, felis tellus ultrices eros, et aliquam sapien nibh sed sem. Fusce ut ante eget purus viverra malesuada. Morbi eget mi maximus, ultricies urna eget, tristique lorem. Fusce cursus venenatis quam, a blandit lectus vulputate id. Praesent id interdum orci, vitae condimentum dui.',
-  tagline: 'About Us Demo Page',
+    'your trusted partner for specialized Honda car maintenance. With over 30 years of experience, we pride ourselves on delivering excellence, professionalism, and ethical standards to keep your Honda running at its best.',
   callToAction: {
-    text: 'View jobs',
-    href: 'https://www.linkedin.com/',
-    targetBlank: true,
-  },
-  callToAction2: {
-    text: 'Contact us',
+    text: 'Book a Service',
     href: '/contact',
   },
+  
   image: {
-    src: hero2Img,
-    alt: 'Hero TailNext',
+    src: 'https://res.cloudinary.com/dvcfefmys/image/upload/v1729420448/honda_accord_ehev_2023_8k-2560x1440_l57tzd.webp',
+    alt: 'image hero background',
   },
 };
 
@@ -88,7 +85,7 @@ export const featuresFourAbout: FeaturesProps = {
   header: {
     title: 'Our mission',
     subtitle:
-      'Quisque laoreet nisi et lectus consectetur, at placerat libero dictum. Donec sed hendrerit turpis. Nunc vel nibh blandit, hendrerit turpis non, mattis magna. Duis feugiat dui mi, eget iaculis ligula gravida congue. Nam quis mauris id eros imperdiet imperdiet. In et dolor non nisi vestibulum rhoncus nec eget dolor.',
+      'To provide top-tier maintenance services and genuine spare parts, ensuring reliability, safety, and optimal performance for Honda vehicles. We aim to exceed customer expectations through innovation, quality, and a commitment to excellence.',
     tagline: 'Mission and Values',
   },
 };
@@ -99,42 +96,42 @@ export const featuresFourAboutTwo: FeaturesProps = {
   hasBackground: false,
   header: {
     title: 'Our values',
-    subtitle: 'Etiam tellus tortor, mattis id mauris et, lobortis ullamcorper nunc.',
+    subtitle: 'Hossam Maintenance Center—your partner in keeping your Honda in peak condition.',
   },
   isAfterContent: true,
   columns: 2,
   items: [
     {
       title: 'Customer-centricity',
-      description: 'Nullam non sodales massa. Ut justo neque, elementum et vehicula vel, pellentesque non orci.',
+      description: 'We prioritize your satisfaction with every service.',
       icon: IconUser,
     },
     {
       title: 'Innovation and adaptability',
       description:
-        'Etiam ornare, purus nec venenatis porttitor, velit leo convallis dui, at porttitor nibh tortor quis velit.',
+        'Utilizing the latest tools and technologies to enhance your vehicles performance.',
       icon: IconBulb,
     },
     {
       title: 'Quality assurance',
-      description: 'Morbi sit amet arcu vitae metus molestie auctor sit amet in risus. Sed vel lacinia purus.',
+      description: 'Ensuring every part and service meets the highest standards.',
       icon: IconThumbUp,
     },
     {
       title: 'Accessibility and customization',
-      description: 'Phasellus id cursus urna. Nullam feugiat tellus sed euismod venenatis.',
+      description: 'Tailored solutions to suit your specific Honda maintenance needs.',
       icon: IconAdjustments,
     },
     {
-      title: 'Collaboration and partnership',
+      title: 'Collaboration and Trust',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.',
+        'Building lasting relationships through honesty and transparency.',
       icon: IconHeartHandshake,
     },
     {
-      title: 'Ethical and responsible design',
-      description: 'Maecenas urna augue, commodo vitae lectus euismod, tempor aliquam arcu.',
-      icon: IconHomeEco,
+      title: 'Ethical Practices',
+      description: 'Upholding integrity in all aspects of our work.',
+      icon: IconShieldCheckFilled,
     },
   ],
 };
@@ -145,41 +142,29 @@ export const stepsAbout: StepsProps = {
   hasBackground: true,
   isImageDisplayed: false,
   header: {
-    title: 'History of TailNext',
+    title: 'History of Hossam Maintenance Center',
     subtitle:
-      'Duis sit amet magna et sapien cursus fermentum. Curabitur ac mauris non magna condimentum scelerisque. Aliquam nunc ipsum, semper ac scelerisque sit amet, pulvinar vitae libero.',
+      'Founded over three decades ago, Hossam Maintenance Center has grown from a small workshop into a leading name in Honda car maintenance. Our journey is marked by a dedication to quality, innovation, and customer satisfaction',
     tagline: 'Company History',
   },
   items: [
     {
       title: 'Our foundation',
       description:
-        'Donec pharetra, justo a rutrum venenatis, augue erat porta leo, non eleifend dui lectus ut turpis. Fusce tincidunt mattis magna eu commodo. Proin non facilisis enim, ut luctus dolor.',
+        'Established with a mission to provide reliable and professional car maintenance services.',
       icon: IconNumber1,
     },
     {
-      title: 'The early years',
+      title: 'Growth and Expertise',
       description:
-        'Nunc scelerisque dui non nulla faucibus, sed elementum urna congue. Donec varius nisi sit amet massa malesuada euismod. Donec auctor interdum leo eget ultricies.',
+        'Expanding our services and expertise to meet evolving customer needs.',
       icon: IconNumber2,
     },
     {
-      title: 'Growth',
+      title: 'Commitment to Excellence',
       description:
-        'Vestibulum euismod dolor vel magna consectetur, vitae ornare metus finibus. Nam nec magna lacinia, cursus purus ut, pellentesque ex. Aliquam nec porta sapien, nec iaculis odio. Donec sed lacus arcu.',
+        'Continuously upgrading our facilities, tools, and training to remain at the forefront of the industry.',
       icon: IconNumber3,
-    },
-    {
-      title: 'Expanding horizons',
-      description:
-        'Aenean mollis est ac quam viverra, eget dictum justo iaculis. Morbi venenatis neque sed blandit faucibus. Pellentesque sit amet justo at ligula eleifend lacinia. Etiam nec orci quam.',
-      icon: IconNumber4,
-    },
-    {
-      title: 'Our ongoing commitment',
-      description:
-        'Sed vel purus a odio tincidunt mollis. Nam et tortor est. Aliquam sodales interdum tortor ac condimentum. Suspendisse laoreet nulla est, ac luctus est tempus ut.',
-      icon: IconNumber5,
     },
   ],
 };
@@ -192,39 +177,29 @@ export const features3About: FeaturesProps = {
   header: {
     title: 'Our culture',
     subtitle:
-      'Nullam maximus ante eros, ac eleifend mi condimentum ut. Donec volutpat felis ac purus pretium, vitae mollis quam scelerisque.',
+      'At Hossam Maintenance Center, we foster a culture of excellence and teamwork.',
     tagline: 'culture',
   },
   items: [
     {
       title: 'Customer engagement',
-      description: 'Nullam non sodales massa. Ut justo neque, elementum et vehicula vel, pellentesque non orci.',
+      description: 'We listen, adapt, and deliver personalized solutions.',
       icon: IconCirclesRelation,
     },
     {
-      title: 'Creativity and design excellence',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      title: 'Creativity and Innovation',
+      description: 'Constantly improving our methods and services.',
       icon: IconPalette,
     },
     {
       title: 'Continuous learning',
-      description: 'Morbi sit amet arcu vitae metus molestie auctor sit amet in risus. Sed vel lacinia purus.',
+      description: 'Investing in training to ensure our team remains highly skilled.',
       icon: IconBook,
     },
     {
-      title: 'Collaboration and cross-functionality',
-      description: 'Phasellus id cursus urna. Nullam feugiat tellus sed euismod venenatis.',
+      title: 'Work-Life Balance',
+      description: ' Supporting our employees well-being to maintain a motivated workforce.',
       icon: IconPuzzle2,
-    },
-    {
-      title: 'Entrepreneurial spirit',
-      description: 'Phasellus interdum placerat enim sed vehicula. Ut tincidunt, magna in iaculis maximus.',
-      icon: IconFlame,
-    },
-    {
-      title: 'Employee well-being and balance',
-      description: 'Maecenas urna augue, commodo vitae lectus euismod, tempor aliquam arcu.',
-      icon: IconScale,
     },
   ],
 };
@@ -235,28 +210,26 @@ export const featuresAbout: FeaturesProps = {
   hasBackground: true,
   header: {
     title: 'Our record of excellence',
-    subtitle:
-      'Etiam lobortis elementum ornare. Vestibulum lacinia magna ut eleifend facilisis. Cras ac mi nec diam auctor dictum.',
     tagline: 'Achievements',
   },
   columns: 1,
   items: [
     {
-      title: 'Global recognition',
+      title: 'local recognition',
       description:
-        'Nullam porttitor lacus elit, sed pellentesque eros aliquam eget. Phasellus interdum placerat enim sed vehicula. Ut tincidunt, magna in iaculis maximus, lectus ante dignissim neque, imperdiet sodales enim augue a quam.',
+        'Recognized for exceptional service and customer satisfaction.',
       icon: IconAward,
     },
     {
-      title: 'Innovator of the year award',
+      title: 'Innovator on the field',
       description:
-        'Cras mollis elit massa, vel interdum libero molestie a. Nulla facilisi. Suspendisse cursus non sapien ut tincidunt. Sed non tortor sit amet nisl tristique facilisis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+        'Recipient of industry awards for innovation and sustainability.',
       icon: IconAward,
     },
     {
-      title: 'Sustainability award',
+      title: 'Sustainability',
       description:
-        'Sed non tortor sit amet nisl tristique facilisis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent in tempor orci. Vestibulum velit justo, dignissim quis nisl nec, scelerisque ultrices mi sapien diam quis elit.',
+        'Trusted by thousands of Honda owners for consistent quality and reliability.',
       icon: IconAward,
     },
   ],
